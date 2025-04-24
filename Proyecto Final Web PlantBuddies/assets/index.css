@@ -1,0 +1,42 @@
+/*encabezado*/
+.heat {
+  .h1 {
+    text-align: left;
+  background-color:var(--verde-acento);
+  }
+.img {
+  justify-content: flex-start;
+  width: 20;
+  height: 20;
+}
+/* Paleta de colores del sitio */
+.root {
+--Black:#473f34;
+--color-fondo:#F6E8B1;
+--verde-lima:#b7CA79;
+--verde-oscuro:#677E52;
+--verde-acento:#B3B792;
+--Marron-oscuro:#1c3d19;
+--Marron-intermedio:#cfbb99;
+--Marron-clarito:#e5d7c4;
+}
+/* Estilo para cada elemento del menú */
+.nav  {
+  width: 100%;
+  justify-content: flex-end;
+  /* fija el menú en la parte superior */
+  position: fixed; 
+  top: 0;
+  right: 0;
+}
+}
+/* Estilo para los enlaces */
+
+/* Efecto al pasar el mouse */
+
+
+/*fin encabezado*/
+
+/*primera seccion*/
+
+/*fin primera seccion*/
