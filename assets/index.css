@@ -1,0 +1,288 @@
+/* Paleta de colores del sitio */
+:root {
+  --Black: #473f34;
+  --color-fondo: #f6e8b1;
+  --verde-lima: #b7ca79;
+  --verde-oscuro: #677e52;
+  --verde-acento: #b3b792;
+  --Marron-oscuro: #1c3d19;
+  --Marron-intermedio: #cfbb99;
+  --Marron-clarito: #e5d7c4;
+}
+
+/* Grupo de tipografías */
+:root {
+  --fuente1: "VT323", monospace;
+  --fuente2: "tagesschrift";
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e5d7c4;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado------------------------------------------------------------------------------------------------------- */
+header {
+  background-color: var(--verde-acento);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+}
+
+.logoplantbuddies {
+  width: 100px;
+  height: auto;
+  font-size: 2.5rem;
+}
+
+h1 {
+  font-family: var(--fuente2);
+  font-weight: 400;
+  font-style: bold;
+  color: var(--verde-oscuro);
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Menú -----------------------------------------------------------------------------------------------------*/
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--Marron-oscuro);
+  font-family: var(--fuente2);
+  font-size: 1.2rem;
+  display: inline-block; /* Añadido para que el transform funcione */
+  transition: all 0.3s ease; /* Añadido para suavizar todas las transiciones */
+}
+
+nav a:hover {
+  color: var(--verde-oscuro);
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.AvatarBaseUsuario {
+  width: 60px;
+  height: 60px;
+}
+/* animacion decoraciones */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg); /*  rotate, el valor de rotación, translate como se mueve en Y */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.floating-leaf {
+  position: absolute;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* regula tamaño decoraciones */
+.floating-leaf img {
+  width: 80px;
+  height: auto;
+}
+
+.leaf-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.leaf-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.leaf-3 {
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 2s;
+}
+/* Sección de bienvenida ---------------------------------------------------------------------------------------*/
+/* cartel bienvenida */
+.bannerlandingpage {
+  background-color: var(--verde-acento);
+  padding: 2rem;
+  align-content: center;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.aventura {
+  font-family: var(--fuente2);
+  color: var(--Black);
+  text-align: bannerlandingpage;
+}
+
+.banner {
+  position: relative;
+}
+
+.mensajeDeBienvenida {
+  font-family: var(--fuente2);
+  color: var(--Black);
+  max-width: 100%;
+  margin: 1rem auto;
+  height: 400px;
+}
+
+button {
+  background-color: var(--verde-lima);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: medium;
+  font-family: var(--fuente2);
+  color: var(--Marron-oscuro);
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block; /* Añadido para que el transform funcione */
+  transition: all 0.3s ease; /* Añadido para suavizar todas las transiciones */
+}
+
+button:hover {
+  background-color: var(--verde-oscuro);
+  color: var(--color-fondo);
+  transform: scale(1.05);
+}
+
+.goblinlandingpage1 {
+  max-width: 400px; /* tamaño imagen*/
+  height: auto;
+  position: relative; /* Cambiado de relative a absolute para posicionamiento exacto */
+  top: 135%; /* Posición vertical en el centro */
+  right: 10%; /* Posición horizontal a 1/4 del borde derecho */
+  transform: translateY(-50%); /* Centra verticalmente la imagen */
+}
+
+/* Contenedor principal para mantener el layout */
+#mensaje-de-bienvenida {
+  position: relative; /* Necesario para el posicionamiento absoluto del goblin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 30%px;
+  margin: 300px;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.bannerlandingpage {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
+/* Sección de sponsors ------------------------------------------------------------------------*/
+#sponsors {
+  padding: 2rem;
+  background-color: var(--Marron-clarito);
+  height: 30 px;
+  width: 100%;
+}
+
+.supporters-logos {
+  text-align: center;
+}
+
+.supporters-logos h4 {
+  font-family: var(--fuente1);
+  color: var(--Black);
+  margin-bottom: 1rem;
+}
+.sponsorIngeniasoft {
+  width: 10px;
+  height: 20px;
+  margin: 1rem;
+  display: inline-block; /* Añadido para que el transform funcione */
+  transition: transform 0.3s ease; /* Añadido específicamente para el transform */
+}
+
+.sponsorIngeniasoft:hover {
+  transform: scale(1.1);
+}
+.supporter-logo {
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--Marron-intermedio);
+}
+/* footer------------------------------------------------------------------------*/
+.footer {
+  flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 10px
+  background-color: var(--Black);
+}
+  #copyright {
+    color: var(--color-fondo);
+    font-family: var(--fuente1);
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+  #descripcionPagina {
+    color: var(--color-fondo);
+    font-family: var(--fuente1);
+    text-align: left;
+  }
+  .footerMenu {
+    display: flex;
+    font-family: var(--fuente1);
+    justify-content: space-between;
+    background-color: var(--Black);
+    padding: 10px;
+}
+.footerMenu  a {
+  font-family: var(--fuente1);
+    color: var(--color-fondo);
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.footerMenu a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
