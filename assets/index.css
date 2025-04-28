@@ -41,7 +41,7 @@ header {
   gap: 1rem;
 }
 
-.logoplantbuddies {
+.logo-container img {
   width: 100px;
   height: auto;
   font-size: 2.5rem;
@@ -308,28 +308,32 @@ button:hover {
 /* Sección de sponsors ------------------------------------------------------------------------------------------------------------------------------*/
 
 .BannerSponsors {
-  position: relative;
+
+  width: 100%;
+  height: 10 px;
+  background-color: var(--verde-oscuro);
+  font-family: var(--fuente1);
+  font-size: medium;
+  color: var(--Black);
+  margin: auto;
+  text-align: center;
+}
+
+.supporters-logos {
+  flex-direction: row;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 2rem;
-  height: 10 px;
-  background-color: var(--Marron-intermedio);
   padding: 2rem;
 }
 
 
-.supporters-logos h4 {
-  font-family: var(--fuente1);
-  color: var(--Black);
-  margin-bottom: 1rem;
-}
-
 .sponsorIngenias img{
-  width: 300px;
-  height: 600px;
-  margin: 1rem;
+  width: 100px;
+  height: 100px;
+  margin: auto;
  
 }
 
@@ -337,12 +341,17 @@ button:hover {
   transform: scale(1.1);
 }
 
-.supporter-logo {
-  display: inline-block;
-  margin: 1rem;
-  padding: 1rem;
-  background-color: var(--Marron-intermedio);
+.sponsorlogo2 img {
+  width: 100px;
+  height: 100px;
+ 
 }
+.sponsorlogo3 img {
+  width: 100px;
+  height: 100px;
+
+}
+
 /* Sección como funciona------------------------------------------------------------------------------------------------------------------------------*/
 .comofunciona h2 {
   font-family: var(--fuente2);
@@ -363,7 +372,12 @@ button:hover {
 
 .comofunciona-container ul {
   background-color: var(--verde-acento);
+  width: 470px;
+  height: 356px;
   margin: 30px;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
 }
 .comofunciona-container:hover {
   background-color: var(--verde-oscuro);
@@ -375,17 +389,22 @@ button:hover {
   font-family: var(--fuente2);
   text-align: center;
   background-color: var(--verde-lima);
+  align-content: center;
 
 }
 
 .comunidad-CONTAINER {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
   justify-content: space-around;
   background-color: var(--color-fondo);
-  width: 600px;
-  margin: 100px;
+  border-radius: 20px;
+  width: 1200px;
+  margin: 50px auto;
+  padding: 60px;
+
+
 }
 
 /* Testimonios------------------------------------------------------------------------------------------------------------------------------*/
@@ -395,43 +414,73 @@ button:hover {
   font-family: var(--fuente2);
   text-align: center;
 }
-.testimonios:hover {
-   transform: scale(1.05);
-}
+
 
 .testimonios-container {
   display: flex;
   align-items: center;
   padding: 2rem;
-  background-color: var(--verde-acento);
   border-radius: 8px;
   margin: 30 px;
-  max-width: 100%;
-}
 
+}
+/* User 1 ------------------*/
 .Usuario1  {
 background-color: #365746;
-border-radius: 30px;
+border-radius: 30px 30px 0px 0px;
+width: 300px;
+height: 200px;
+
 }
+.Usuario1:hover {
+  transform: scale(1.05);
+}
+
 .Usuario1 img {
   width: 80px;
   height: 76px;
   margin:auto;
 }
-
+.user1fondo {
+  background-color: var(--Marron-clarito);
+  stroke: #677e52;
+  stroke-width: 4px;
+  border-radius: 0px 0px 30px 30px;
+  width: 200px;
+  height: 200px;
+}
+/* User 2----------------- */
 .Usuario2 img {
   width: 80px;
   height:76px;
   margin:auto;
 }
+.Usuario2:hover {
+  transform: scale(1.05);
+}
+.Usuario2  {
+  background-color: #365746;
+  border-radius: 30px;
+  width: 200px;
+  height: 200px;
+  }
+  /* User 3------------------ */
 
-.Usuario3 img {
+  .Usuario3 img {
   width: 80px;
   height:76px;
   margin: auto;
 }
+.Usuario3:hover {
+  transform: scale(1.05);
+}
 
-
+.Usuario3  {
+  background-color: #365746;
+  border-radius: 30px;
+  width: 200px;
+  height: 200px;
+  }
 
 /* footer-------------------------------------------------------------------------------------------------------------------------------*/
 .pie-de-pagina {
