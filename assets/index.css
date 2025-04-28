@@ -8,6 +8,7 @@
   --Marron-oscuro: #1c3d19;
   --Marron-intermedio: #cfbb99;
   --Marron-clarito: #e5d7c4;
+  margin: 0px;
 }
 
 /* Grupo de tipografías */
@@ -38,7 +39,6 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  
 }
 
 .logoplantbuddies {
@@ -76,8 +76,10 @@ nav a {
   color: var(--Marron-oscuro);
   font-family: var(--fuente2);
   font-size: 1.2rem;
-  display: inline-block; /* Añadido para que el transform funcione */
-  transition: all 0.3s ease; /* Añadido para suavizar todas las transiciones */
+  display: inline-block;
+  /* Añadido para que el transform funcione */
+  transition: all 0.3s ease;
+  /* Añadido para suavizar todas las transiciones */
 }
 
 nav a:hover {
@@ -90,14 +92,49 @@ nav a:hover {
   width: 60px;
   height: 60px;
 }
+ /* MenuDeslizable Conectado------------------------------------------------------------------------------------------------------------------------- */
+ .menuUsuarioConectado {
+  position: relative; /* Necesario para posicionar el submenu */
+  display: inline-block; /* Permite que el menú sea una línea */
+}
+
+.menu-item {
+  display: block; /* Asegura que el enlace ocupe todo el área */
+  padding: 10px 15px; /* Espacio interior para el texto */
+  background-color: #f2f2f2; /* Color de fondo */
+  color: #333; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.submenu {
+  display: none; /* Inicialmente oculto */
+  position: absolute; /* Posicionamiento absoluto para el submenu */
+  background-color: #fff; /* Color de fondo del submenu */
+  border: 1px solid #ccc; /* Borde del submenu */
+  padding: 5px; /* Espacio interior del submenu */
+  z-index: 1; /* Asegura que el submenu esté por encima */
+}
+
+.menu-item:hover {
+  background-color: #ddd; /* Cambio de color al pasar el cursor */
+}
+
+.menu:hover .submenu {
+  display: block; /* Muestra el submenu al pasar el cursor sobre el menú */
+}
+ /* MenuDeslizable Desconectado------------------------------------------------------------------------------------------------------------------------- */
+
 /* animacion decoraciones */
 @keyframes float {
   0% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
-    transform: translateY(-20px) rotate(10deg); /*  rotate, el valor de rotación, translate como se mueve en Y */
+    transform: translateY(-20px) rotate(10deg);
+    /*  rotate, el valor de rotación, translate como se mueve en Y */
   }
+
   100% {
     transform: translateY(0) rotate(0deg);
   }
@@ -131,6 +168,7 @@ nav a:hover {
   left: 20%;
   animation-delay: 2s;
 }
+
 /* Sección de bienvenida ---------------------------------------------------------------------------------------*/
 /* cartel bienvenida */
 .bannerlandingpage {
@@ -148,8 +186,13 @@ nav a:hover {
   text-align: bannerlandingpage;
 }
 
-.banner {
-  position: relative;
+.containerBienvenida {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: var(--Marron-intermedio);
+  width: 800px;
+  height: 800px;
 }
 
 .mensajeDeBienvenida {
@@ -159,7 +202,21 @@ nav a:hover {
   margin: 1rem auto;
   height: 400px;
 }
-
+.goblinlandingpage1 {
+  max-width: 400px;
+  /* tamaño imagen*/
+  height: auto;
+  position: relative;
+  /* Cambiado de relative a absolute para posicionamiento exacto */
+  top: 135%;
+  /* Posición vertical en el centro */
+  right: 10%;
+  /* Posición horizontal a 1/4 del borde derecho */
+  transform: translateY(-50%);
+  align-content: right;
+ 
+}
+/* Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 button {
   background-color: var(--verde-lima);
   border: none;
@@ -169,8 +226,10 @@ button {
   color: var(--Marron-oscuro);
   cursor: pointer;
   border-radius: 4px;
-  display: inline-block; /* Añadido para que el transform funcione */
-  transition: all 0.3s ease; /* Añadido para suavizar todas las transiciones */
+  display: inline-block;
+  /* Añadido para que el transform funcione */
+  transition: all 0.3s ease;
+  /* Añadido para suavizar todas las transiciones */
 }
 
 button:hover {
@@ -179,18 +238,63 @@ button:hover {
   transform: scale(1.05);
 }
 
-.goblinlandingpage1 {
-  max-width: 400px; /* tamaño imagen*/
-  height: auto;
-  position: relative; /* Cambiado de relative a absolute para posicionamiento exacto */
-  top: 135%; /* Posición vertical en el centro */
-  right: 10%; /* Posición horizontal a 1/4 del borde derecho */
-  transform: translateY(-50%); /* Centra verticalmente la imagen */
+
+/* Estilos para el botón "Comenzar ahora" */
+.start-button {
+  background-color: #416d54;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.start-button:hover {
+  background-color: #365746;
+}
+
+/* Estilos para el modal */
+.login-modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  overflow: auto;
+}
+
+.close-modal {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  color: #416d54;
+  cursor: pointer;
+}
+
+/* Centra el contenedor de login en el modal */
+.login-container {
+  position: relative;
+  margin: 10% auto;
+  max-width: 400px;
+  background-color: #f8e8c0;
+  border-radius: 15px;
+  padding: 20px;
+  border: 5px solid #416d54;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* FIN Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 
 /* Contenedor principal para mantener el layout */
 #mensaje-de-bienvenida {
-  position: relative; /* Necesario para el posicionamiento absoluto del goblin */
+  position: relative;
+  /* Necesario para el posicionamiento absoluto del goblin */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,91 +302,191 @@ button:hover {
   max-width: 30%px;
   margin: 300px;
 }
+.text-container-bienvenida{
+  position: relative;}
 
-.banner {
+/* Sección de sponsors ------------------------------------------------------------------------------------------------------------------------------*/
+
+.BannerSponsors {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-}
-
-.bannerlandingpage {
-  max-width: 800px;
-  width: 100%;
-  height: auto;
-}
-/* Sección de sponsors ------------------------------------------------------------------------*/
-#sponsors {
+  height: 10 px;
+  background-color: var(--Marron-intermedio);
   padding: 2rem;
-  background-color: var(--Marron-clarito);
-  height: 30 px;
-  width: 100%;
 }
 
-.supporters-logos {
-  text-align: center;
-}
 
 .supporters-logos h4 {
   font-family: var(--fuente1);
   color: var(--Black);
   margin-bottom: 1rem;
 }
-.sponsorIngeniasoft {
-  width: 10px;
-  height: 20px;
+
+.sponsorIngenias img{
+  width: 300px;
+  height: 600px;
   margin: 1rem;
-  display: inline-block; /* Añadido para que el transform funcione */
-  transition: transform 0.3s ease; /* Añadido específicamente para el transform */
+ 
 }
 
 .sponsorIngeniasoft:hover {
   transform: scale(1.1);
 }
+
 .supporter-logo {
   display: inline-block;
   margin: 1rem;
   padding: 1rem;
   background-color: var(--Marron-intermedio);
 }
-/* footer------------------------------------------------------------------------*/
-.footer {
-  flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
-  padding: 10px
+/* Sección como funciona------------------------------------------------------------------------------------------------------------------------------*/
+.comofunciona h2 {
+  font-family: var(--fuente2);
+  text-align: center;
+  color: var(--verde-oscuro);
+}
+.comofunciona-container {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin: 30px;
+  max-width: 100%;
+  font-family: var(--fuente2);
+  
+}
+
+.comofunciona-container ul {
+  background-color: var(--verde-acento);
+  margin: 30px;
+}
+.comofunciona-container:hover {
+  background-color: var(--verde-oscuro);
+  color: var(--color-fondo);
+  transform: scale(1.05);
+}
+/* ¿Porqué unirte a nuestra comunidad?------------------------------------------------------------------------------------------------------------------------------*/
+.comunidad {
+  font-family: var(--fuente2);
+  text-align: center;
+  background-color: var(--verde-lima);
+
+}
+
+.comunidad-CONTAINER {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-fondo);
+  width: 600px;
+  margin: 100px;
+}
+
+/* Testimonios------------------------------------------------------------------------------------------------------------------------------*/
+
+.testimonios {
+  
+  font-family: var(--fuente2);
+  text-align: center;
+}
+.testimonios:hover {
+   transform: scale(1.05);
+}
+
+.testimonios-container {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--verde-acento);
+  border-radius: 8px;
+  margin: 30 px;
+  max-width: 100%;
+}
+
+.Usuario1  {
+background-color: #365746;
+border-radius: 30px;
+}
+.Usuario1 img {
+  width: 80px;
+  height: 76px;
+  margin:auto;
+}
+
+.Usuario2 img {
+  width: 80px;
+  height:76px;
+  margin:auto;
+}
+
+.Usuario3 img {
+  width: 80px;
+  height:76px;
+  margin: auto;
+}
+
+
+
+/* footer-------------------------------------------------------------------------------------------------------------------------------*/
+.pie-de-pagina {
+  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 10px;
   background-color: var(--Black);
-}
-  #copyright {
-    color: var(--color-fondo);
-    font-family: var(--fuente1);
-    text-align: center;
-    margin-top: 5%;
-    margin-bottom: 2%;
-  }
-  #descripcionPagina {
-    color: var(--color-fondo);
-    font-family: var(--fuente1);
-    text-align: left;
-  }
-  .footerMenu {
-    display: flex;
-    font-family: var(--fuente1);
-    justify-content: space-between;
-    background-color: var(--Black);
-    padding: 10px;
-}
-.footerMenu  a {
+  width: 100%;
   font-family: var(--fuente1);
-    color: var(--color-fondo);
-    text-decoration: none;
-    padding: 10px 15px;
+  color: var(--color-fondo);
 }
+
+.footerMenu h3 {
+  color: var(--color-fondo);
+  margin: auto;
+}
+
+
+.footerMenu {
+  display: flex;
+  font-family: var(--fuente1);
+  justify-content: space-around;
+  background-color: var(--Black);
+  margin: auto;
+}
+
+.footerMenu li {
+  list-style-type: none;
+  margin: 10px 0px 5px 0px;
+}
+
+.footerMenu ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  color: var(--color-fondo);
+}
+
+.footerMenu a {
+  font-family: var(--fuente1);
+  color: var(--color-fondo);
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
 .footerMenu a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+.footerMenuEnlaces {
+  text-align: center;
+}
+#copyright {
+  color: var(--color-fondo);
+  font-family: var(--fuente1);
+  text-align: center;
+  margin: auto;
 
-
-
-
+}

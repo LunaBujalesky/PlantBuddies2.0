@@ -1,0 +1,103 @@
+
+:root {
+    --fuente1: "VT323", monospace;
+    --fuente2: "tagesschrift";
+  }
+  :root {
+    --Black: #473f34;
+    --color-fondo: #f6e8b1;
+    --verde-lima: #b7ca79;
+    --verde-oscuro: #677e52;
+    --verde-acento: #b3b792;
+    --Marron-oscuro: #1c3d19;
+    --Marron-intermedio: #cfbb99;
+    --Marron-clarito: #e5d7c4;
+  }
+
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e5d7c4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  header {
+    background-color: var(--verde-acento);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logoplantbuddies {
+    width: 100px;
+    height: auto;
+    font-size: 2.5rem;
+  }
+  
+  h1 {
+    font-family: var(--fuente2);
+    font-weight: 400;
+    font-style: bold;
+    color: var(--verde-oscuro);
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  /* Menú -----------------------------------------------------------------------------------------------------*/
+  nav {
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--Marron-oscuro);
+    font-family: var(--fuente2);
+    font-size: 1.2rem;
+    display: inline-block;
+    /* Añadido para que el transform funcione */
+    transition: all 0.3s ease;
+    /* Añadido para suavizar todas las transiciones */
+  }
+  
+  nav a:hover {
+    color: var(--verde-oscuro);
+    text-decoration: underline;
+    transform: scale(1.05);
+  }
+  
+  .AvatarBaseUsuario {
+    width: 60px;
+    height: 60px;
+  }
+
+ /* registro -------------------------------------------------------------------------------------------------------------------- */
+
+
+  .registratuplanta {
+    background-color:var(--verde-oscuro);
+    padding: 20px;
+    border-radius: 5px;
+    font-family: var(--fuente2);
+    color: var(--Marron-clarito);
+}
