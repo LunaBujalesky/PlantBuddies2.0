@@ -427,9 +427,13 @@ button:hover {
 /* User 1 ------------------*/
 .Usuario1  {
 background-color: #365746;
+margin-top: -300px;
 border-radius: 30px 30px 0px 0px;
 width: 300px;
 height: 200px;
+border-width: 3px;
+border-color: #677e52;
+border-style: solid;
 
 }
 .Usuario1:hover {
@@ -437,16 +441,18 @@ height: 200px;
 }
 
 .Usuario1 img {
+  margin-top: -40px;
   width: 80px;
   height: 76px;
-  margin:auto;
 }
 .user1fondo {
   background-color: var(--Marron-clarito);
-  stroke: #677e52;
-  stroke-width: 4px;
+  border-width: 3px;
+  border-color: #677e52;
+  border-style: solid;
   border-radius: 0px 0px 30px 30px;
-  width: 200px;
+  margin-top: 66px;
+  width: 300px;
   height: 200px;
 }
 /* User 2----------------- */
@@ -455,6 +461,8 @@ height: 200px;
   height:76px;
   margin:auto;
 }
+.recuadroverde 
+
 .Usuario2:hover {
   transform: scale(1.05);
 }
@@ -496,7 +504,6 @@ height: 200px;
   color: var(--color-fondo);
   margin: auto;
 }
-
 
 .footerMenu {
   display: flex;
