@@ -170,62 +170,74 @@ nav a:hover {
 }
 
 /* Sección de bienvenida ---------------------------------------------------------------------------------------*/
-/* cartel bienvenida */
-.bannerlandingpage {
-  background-color: var(--verde-acento);
-  padding: 2rem;
-  align-content: center;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 800px;
+#mensaje-de-bienvenida {
+  width: 100%;
+  margin: 100px auto 150px auto;
 }
 
-.aventura {
-  font-family: var(--fuente2);
-  color: var(--Black);
-  text-align: bannerlandingpage;
-}
-
-.containerBienvenida {
+.container-bienvenida {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  color: var(--Marron-intermedio);
-  width: 800px;
-  height: 800px;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  width: 880px;
+  height: 700px;
+  background-color: var(--Marron-intermedio);
+  margin: auto;
 }
-
-.mensajeDeBienvenida {
+/* cartel bienvenida */
+.text-content {
+  justify-content: left;
+height: auto;
+width: auto;
+}
+.banner-title {
+  background-color: var(--Black);
+  border-radius: 8px;
+  width: 600px;
+  height: 100px;
+  align-content: center;
+  margin-top: 30px;
+  border-radius: 0px 18px 18px 0px;
+}
+.banner-title h2 {
+  font-family: var(--fuente2);
+  color: var(--Marron-clarito);
+  text-align: left;
+  padding-left: 20px;
+}
+.p-container {
+  border-radius: 26px;
+  background-color: var(--Marron-intermedio);
+}
+.text-content p {
   font-family: var(--fuente2);
   color: var(--Black);
-  max-width: 100%;
-  margin: 1rem auto;
-  height: 400px;
+  margin: auto;
+  height: auto;
+  width: 200px;
+  position: relative;
 }
+
 .goblinlandingpage1 {
-  max-width: 400px;
-  /* tamaño imagen*/
+  width: 60px;
   height: auto;
   position: relative;
-  /* Cambiado de relative a absolute para posicionamiento exacto */
-  top: 135%;
-  /* Posición vertical en el centro */
-  right: 10%;
-  /* Posición horizontal a 1/4 del borde derecho */
-  transform: translateY(-50%);
-  align-content: right;
- 
+  margin-left: -20px;
+
 }
 /* Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 button {
   background-color: var(--verde-lima);
-  border: none;
+  border-width: 1px;
+  border-color: #365746;
   padding: 1rem 2rem;
   font-size: medium;
   font-family: var(--fuente2);
   color: var(--Marron-oscuro);
   cursor: pointer;
   border-radius: 4px;
+  width: auto;
   display: inline-block;
   /* Añadido para que el transform funcione */
   transition: all 0.3s ease;
@@ -291,30 +303,16 @@ button:hover {
 
 /* FIN Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 
-/* Contenedor principal para mantener el layout */
-#mensaje-de-bienvenida {
-  position: relative;
-  /* Necesario para el posicionamiento absoluto del goblin */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  max-width: 30%px;
-  margin: 300px;
-}
-.text-container-bienvenida{
-  position: relative;}
-
 /* Sección de sponsors ------------------------------------------------------------------------------------------------------------------------------*/
 
 .BannerSponsors {
 
   width: 100%;
-  height: 10 px;
+  height: 180px;
   background-color: var(--verde-oscuro);
-  font-family: var(--fuente1);
+  font-family: var(--fuente2);
   font-size: medium;
-  color: var(--Black);
+  color: var(--Marron-clarito);
   margin: auto;
   text-align: center;
 }
@@ -327,6 +325,7 @@ button:hover {
   align-items: center;
   margin-bottom: 2rem;
   padding: 2rem;
+  position: relative;
 }
 
 
@@ -353,10 +352,15 @@ button:hover {
 }
 
 /* Sección como funciona------------------------------------------------------------------------------------------------------------------------------*/
+.comofunciona {
+  width: 100%;
+  height: 660px;
+ }
 .comofunciona h2 {
   font-family: var(--fuente2);
   text-align: center;
   color: var(--verde-oscuro);
+  margin-top: 160px;
 }
 .comofunciona-container {
   display: flex;
@@ -367,19 +371,22 @@ button:hover {
   margin: 30px;
   max-width: 100%;
   font-family: var(--fuente2);
-  
 }
-
-.comofunciona-container ul {
+.comofunciona-container img {
+ width: 86px;
+ height: auto; 
+}
+.comofunciona-container div {
   background-color: var(--verde-acento);
-  width: 470px;
-  height: 356px;
+  width: 300px;
+  height: 200px;
   margin: 30px;
   border-radius: 16px;
   padding: 30px;
   text-align: center;
 }
-.comofunciona-container:hover {
+
+.comofunciona-container div:hover {
   background-color: var(--verde-oscuro);
   color: var(--color-fondo);
   transform: scale(1.05);
@@ -413,6 +420,8 @@ button:hover {
   
   font-family: var(--fuente2);
   text-align: center;
+  margin-top: 100px;
+  margin-bottom: 180px;
 }
 
 
@@ -421,8 +430,11 @@ button:hover {
   align-items: center;
   padding: 2rem;
   border-radius: 8px;
-  margin: 30 px;
-
+  margin-top: 320px;
+justify-content: space-around;
+}
+.testimonios-container p {
+  padding: 0px 36px 60px 36px;
 }
 /* User 1 ------------------*/
 .Usuario1  {
@@ -434,18 +446,16 @@ height: 200px;
 border-width: 3px;
 border-color: #677e52;
 border-style: solid;
-
 }
 .Usuario1:hover {
   transform: scale(1.05);
 }
-
 .Usuario1 img {
   margin-top: -40px;
   width: 80px;
-  height: 76px;
+  height: auto;
 }
-.user1fondo {
+.userfondo {
   background-color: var(--Marron-clarito);
   border-width: 3px;
   border-color: #677e52;
@@ -458,26 +468,30 @@ border-style: solid;
 /* User 2----------------- */
 .Usuario2 img {
   width: 80px;
-  height:76px;
+  height:auto;
   margin:auto;
+  margin-top: -40px;
 }
-.recuadroverde 
-
 .Usuario2:hover {
   transform: scale(1.05);
 }
 .Usuario2  {
   background-color: #365746;
-  border-radius: 30px;
-  width: 200px;
-  height: 200px;
+margin-top: -300px;
+border-radius: 30px 30px 0px 0px;
+width: 300px;
+height: 200px;
+border-width: 3px;
+border-color: #677e52;
+border-style: solid;
   }
   /* User 3------------------ */
 
   .Usuario3 img {
   width: 80px;
-  height:76px;
+  height: auto;
   margin: auto;
+  margin-top: -40px;
 }
 .Usuario3:hover {
   transform: scale(1.05);
@@ -485,9 +499,13 @@ border-style: solid;
 
 .Usuario3  {
   background-color: #365746;
-  border-radius: 30px;
-  width: 200px;
+  margin-top: -300px;
+  border-radius: 30px 30px 0px 0px;
+  width: 300px;
   height: 200px;
+  border-width: 3px;
+  border-color: #677e52;
+  border-style: solid;
   }
 
 /* footer-------------------------------------------------------------------------------------------------------------------------------*/
@@ -500,14 +518,20 @@ border-style: solid;
   color: var(--color-fondo);
 }
 
-.footerMenu h3 {
+.descripcionPagina h3 {
   color: var(--color-fondo);
-  margin: auto;
 }
-
+.descripcionPagina div {
+width: auto;
+color: var(--color-fondo);
+}
+.descripcionPagina p{
+  width: auto;
+    color: var(--color-fondo);
+  }
 .footerMenu {
   display: flex;
-  font-family: var(--fuente1);
+  font-family: var(--fuente1); 
   justify-content: space-around;
   background-color: var(--Black);
   margin: auto;
@@ -536,13 +560,16 @@ border-style: solid;
   text-decoration: underline;
 }
 
-.footerMenuEnlaces {
-  text-align: center;
+.footerMenu h3{
+  text-align: left;
+  padding-left: 10px;
 }
 #copyright {
   color: var(--color-fondo);
   font-family: var(--fuente1);
   text-align: center;
   margin: auto;
+  padding-top: 60px;
+  padding-bottom: 30px;
 
 }
