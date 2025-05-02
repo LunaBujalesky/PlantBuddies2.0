@@ -1,0 +1,181 @@
+/* Paleta de colores del sitio */
+:root {
+  --Black: #473f34;
+  --color-fondo: #f6e8b1;
+  --verde-lima: #b7ca79;
+  --verde-oscuro: #677e52;
+  --verde-acento: #b3b792;
+  --Marron-oscuro: #1c3d19;
+  --Marron-intermedio: #cfbb99;
+  --Marron-clarito: #e5d7c4;
+  margin: 0px;
+}
+
+/* Grupo de tipografías */
+:root {
+  --fuente1: "VT323", monospace;
+  --fuente2: "tagesschrift";
+}
+/* ENCABEZADO WEB INTERCAMBIOS----------------------------------------- */
+.intercambio-encabezado {
+  background-color: var(--verde-oscuro);
+  width: 100%;
+  height: 290px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.intercambio-encabezado h2 {
+  color: var(--Marron-clarito);
+  font-family: var(--fuente2);
+  margin-top: 140px;
+  margin-left: 230px;
+  margin-bottom: 30px;
+}
+
+.intercambio-encabezado p {
+  color: var(--Marron-clarito);
+  font-family: var(--fuente2);
+  margin-top: 0px;
+  margin-left: 230px;
+  margin-bottom: 42px;
+}
+.contador-ecologico {
+  background-color: var(--Marron-clarito);
+  width: 400px;
+  height: 80px;
+  border-radius: 32px;
+  margin-top: 140px;
+  margin-bottom: 56px;
+  margin-right: 60px;
+}
+.contador-ecologico p {
+  font-family: cambria;
+  color: var(--Black);
+  text-align: center;
+}
+.buscador {
+  background-color: var(--verde-lima);
+  width: 300px;
+  height: 60px;
+  border-radius: 90px;
+  opacity: 60%;
+  margin: 100px 0px 0px 0px;
+  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buscador img {
+  width: 40px;
+  height: auto;
+  margin: 12px 26px 0px 244px;
+}
+
+/* Plantilla Oferta que debe ir dentro de GRid---------------------------------*/
+.planta-en-oferta { /* imagen */
+  width: 300px;
+  height: auto;
+  margin-bottom: -40px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #677e52;
+  border-radius: 82px;
+  cursor: pointer;
+  z-index: 1; 
+}
+.planta-en-oferta:hover { 
+  transform: scale(1.05);
+}
+.avatar-usuario-ofertador { /* icono usuario */
+  width: 60px;
+  height: 60px;
+  margin: 20px 0px 0px 20px;
+}
+.plantilla-oferta:hover { /* animacion de toda la plantilla */
+  transform: scale(1.05);
+}
+.plantilla-oferta { /* contenedor padre de la plantilla */
+  width: 300px;
+  height: auto;
+  border-radius: 40px 40px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#comentarios {
+  width: 8px;
+  height: auto;
+  margin: auto;
+}
+/* Div bases hijos de la plantilla */
+.parte-superior-oferta {
+  background-color: var(--verde-oscuro);
+  width: 500px;
+  height: 800px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #677e52;
+  border-radius: 40px 40px 0px 0px; 
+  box-sizing: border-box;
+  font-family: var(--fuente1);
+  color: var(--Black);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.parte-inferior-oferta {
+  background-color: var(--verde-lima);
+  width: 500px;
+  height: 800px;
+  border-width: 1px;
+  border-color: #677e52;
+  border-style: solid;
+  border-radius: 0px 0px 40px 40px;
+  font-family: var(--fuente1);
+  display: flex;
+}
+.alineacion-botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* sección de la grid con todas las ofertas disponibles---------------------- */
+
+/* grilla*/
+.ofertas {
+  display: grid;
+  grid-template-areas:
+    "nav header header"
+    "nav productos publicidad"
+    "nav servicios publicidad"
+    "nav footer footer";
+  grid-template-rows: 100px 1fr 1fr 75px;
+  grid-template-columns: 20% auto 15%;
+
+  justify-items: stretch; /* start | end |
+  center | stretch */
+  align-items: stretch; /* start | end |
+  center | stretch */
+  display: grid;
+  width: 95%;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+  grid-template-rows: 100px 100px;
+  grid-row-gap: 10px;
+}
+
+/* Efectos de los item grilla------------------------------------------------------------------------------*/
+.grid-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efecto al pasar el cursor */
+.grid-item:hover {
+  transform: scale(1.05);
+  z-index: 5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

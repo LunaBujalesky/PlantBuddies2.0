@@ -1,0 +1,15 @@
+
+:root {
+    --fuente1: "VT323", monospace;
+    --fuente2: "tagesschrift";
+  }
+  :root {
+    --Black: #473f34;
+    --color-fondo: #f6e8b1;
+    --verde-lima: #b7ca79;
+    --verde-oscuro: #677e52;
+    --verde-acento: #b3b792;
+    --Marron-oscuro: #1c3d19;
+    --Marron-intermedio: #cfbb99;
+    --Marron-clarito: #e5d7c4;
+  }
