@@ -2,6 +2,9 @@
 :root {
   --Black: #473f34;
   --color-fondo: #f6e8b1;
+  --beige: #f0e7c6;
+  --verde-logo: #365c19;
+  --verde-goblin: #979f34;
   --verde-lima: #b7ca79;
   --verde-oscuro: #677e52;
   --verde-acento: #b3b792;
@@ -34,7 +37,7 @@ header {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
   z-index: 1000;
   width: 100%;
@@ -56,7 +59,7 @@ h1 {
   font-family: var(--fuente2);
   font-weight: 400;
   font-style: bold;
-  color: var(--verde-oscuro);
+  color: var(--verde-logo);
   margin: 0;
   font-size: 2.5rem;
 }
@@ -95,8 +98,8 @@ nav a:hover {
   width: 60px;
   height: 60px;
 }
- /* MenuDeslizable Conectado------------------------------------------------------------------------------------------------------------------------- */
- .menuUsuarioConectado {
+/* MenuDeslizable Conectado------------------------------------------------------------------------------------------------------------------------- */
+.menuUsuarioConectado {
   position: relative; /* Necesario para posicionar el submenu */
   display: inline-block; /* Permite que el menú sea una línea */
 }
@@ -125,7 +128,7 @@ nav a:hover {
 .menu:hover .submenu {
   display: block; /* Muestra el submenu al pasar el cursor sobre el menú */
 }
- /* MenuDeslizable Desconectado------------------------------------------------------------------------------------------------------------------------- */
+/* MenuDeslizable Desconectado------------------------------------------------------------------------------------------------------------------------- */
 
 /* animacion decoraciones */
 @keyframes float {
@@ -192,9 +195,9 @@ nav a:hover {
 }
 /* cartel bienvenida */
 .text-content {
-justify-content: left;
-width: 875px;
-height: auto;
+  justify-content: left;
+  width: 875px;
+  height: auto;
 }
 .banner-title {
   background-color: var(--Black);
@@ -215,8 +218,8 @@ height: auto;
   border-radius: 26px;
   margin: 36px 0px 6px 38px;
   background-color: var(--Marron-clarito);
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); 
-  padding: 20px 20px 6px 0px; 
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px 6px 0px;
 }
 .text-content p {
   font-family: var(--fuente2);
@@ -228,109 +231,170 @@ height: auto;
   line-height: 1.8;
 }
 
-.goblinlandingpage1 img{
+.goblinlandingpage1 {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goblinlandingpage1 img {
   width: 600px;
   height: auto;
   position: relative;
-  margin-right: 100px;
-  overflow: hidden;
+margin-top: 100px;
 }
-/* Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */        
-        /* Estilo para la etiqueta que funciona como botón */
-        .boton-comienza-ahora {
-          background-color: var(--verde-lima);
-          border-width: 1px;
-          border-color: #365746;
-          border-style: solid;
-          padding: 1rem 2rem;
-          font-size: medium;
-          font-family: var(--fuente2);
-          color: var(--Marron-oscuro);
-          cursor: pointer;
-          border-radius: 4px;
-          width: auto;
-          display: inline-block;
-          transition: all 0.3s ease;
-          margin: 0px 0px 41px 78px;
-          text-align: center;
-      }
-      
-      .boton-comienza-ahora:hover {
-          background-color: var(--verde-oscuro);
-          color: var(--color-fondo);
-          transform: scale(1.05);
-      }
-       /* El elemento a mostrar/ocultar */
-       .log-in-oculto{
-        display: none;
-        position: fixed;
-        margin: -400px 0px 0px 78px;
-        transition: all 0.3s ease;
-        z-index: 1000;
-    }
-          /* Mostrar el elemento cuando se clikeo el falso boton---------------------- */
-          #aparecer-login:checked ~ .log-in-oculto {
-            display: flex;
-            justify-content: center;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-      }
-          /* Cambiar el texto del botón cuando está abierto*/
-          #aparecer-login:checked + .button-label::after {
-            content: " Haz clic para ocultar";
-        }
-          /* Checkbox oculto para controlar el modal */
-          #aparecer-login {
-            display: none;
-        }
-        /* Componentes del log in oculto cuando se abre-------------------------------------------------------------------------- */
-        .close-button {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          background-color: var(--marron-oscuro);
-          color: white;
-          border: none;
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          font-size: 12px;
-          font-weight: bold;
-      }
-       /* El modal con el formulario */
-       .modal {
-        background-color: var(--beige);
-        border-radius: 10px;
-        padding: 20px;
-        width: 320px;
-        text-align: center;
-        position: relative;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        border: 2px solid var(--verde-oscuro);
-        
-        background-color: #f0f0f0;
-    }
-    /* Estilos para los campos del formulario */
-    .input-field {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid var(--verde-oscuro);
-      border-radius: 5px;
-      font-family: var(--fuente2);
-      background-color: #FFF9E6;
-  }
- /* Botón de login */
- .login-button {
+/* Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
+/* Estilo para la etiqueta que funciona como botón */
+.boton-comienza-ahora {
+  background-color: var(--verde-lima);
+  border-width: 1px;
+  border-color: #365746;
+  border-style: solid;
+  padding: 1rem 2rem;
+  font-size: medium;
+  font-family: var(--fuente2);
+  color: var(--Marron-oscuro);
+  cursor: pointer;
+  border-radius: 4px;
+  width: auto;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin: 0px 0px 41px 78px;
+  text-align: center;
+}
+
+.boton-comienza-ahora:hover {
   background-color: var(--verde-oscuro);
-  color: white;
+  color: var(--color-fondo);
+  transform: scale(1.05);
+}
+/* El elemento a mostrar/ocultar */
+.log-in-oculto {
+  display: none;
+  position: fixed;
+  margin: -400px 0px 0px 78px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+/* Mostrar el elemento cuando se clikeo el falso boton---------------------- */
+#aparecer-login:checked ~ .log-in-oculto {
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Cambiar el texto del botón cuando está abierto*/
+#aparecer-login:checked + .button-label::after {
+  content: " Haz clic para ocultar";
+}
+/* Checkbox oculto para controlar el modal */
+#aparecer-login {
+  display: none;
+}
+/* Componentes del log in oculto cuando se abre-------------------------------------------------------------------------- */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--marron-oscuro);
+  color: var(--verde-logo);
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Estilos base para ambos estados del goblin */
+.goblin-ojos-cerrados, .goblin-ojos-abiertos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s ease;
+}
+/* El modal con el formulario */
+.modal {
+  background-color: var(--beige);
+  border-radius: 10px;
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--verde-oscuro);
+  background-color: var(--verde-acento);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Contenedor para el goblin y sus variantes */
+.goblin-container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  margin: 20px 0;
+}
+/* Estilos para los campos del formulario */
+.input-field {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid var(--Black);
+  border-radius: 5px;
+  font-family: var(--fuente2);
+  background-color: var(--beige);
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.goblin-ojos-cerrados img,
+.goblin-ojos-abiertos img {
+  /*estilos para las imágenes */
+  width: 100%;
+  height: auto;
+}
+/* Goblin con ojos abiertos (por defecto visible) */
+.goblin-ojos-abiertos {
+  opacity: 1;
+}
+
+/* Goblin con ojos cerrados (por defecto invisible) */
+.goblin-ojos-cerrados {
+  opacity: 0;
+}
+
+/* Cuando el campo de contraseña está enfocado, invertir las opacidades */
+.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos {
+  opacity: 0;
+}
+
+.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados {
+  opacity: 1;
+}
+/* Botón de login */
+.login-button {
+  background-color: var(--verde-oscuro);
+  color: var(--beige);
   border: none;
   padding: 12px;
   width: 95%;
@@ -343,21 +407,38 @@ height: auto;
 }
 
 .login-button:hover {
-  background-color: #2A4535;
+  background-color: #2a4535;
   transform: scale(1.02);
 }
-  /* Campo de contraseña con icono de ojo */
-  .password-container {
-    position: relative;
-    width: 95%;
-    margin: 0 auto;
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--verde-oscuro);
+}
+/* Campo de contraseña con icono de ojo */
+.password-container {
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+/* Cambio de estado cuando se enfoca el campo de contraseña */
+.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos,
+.password-container input:focus ~ .goblin-container .goblin-ojos-abiertos {
+  opacity: 0;
+}
+
+.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados,
+.password-container input:focus ~ .goblin-container .goblin-ojos-cerrados {
+  opacity: 1;
 }
 /* FIN Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 
 /* Sección de sponsors ------------------------------------------------------------------------------------------------------------------------------*/
 
 .BannerSponsors {
-
   width: 100%;
   height: 180px;
   background-color: var(--verde-oscuro);
@@ -377,12 +458,10 @@ height: auto;
   position: relative;
 }
 
-
-.sponsorIngenias img{
+.sponsorIngenias img {
   width: 100px;
   height: 100px;
   margin: auto;
- 
 }
 
 .sponsorIngeniasoft:hover {
@@ -392,19 +471,17 @@ height: auto;
 .sponsorlogo2 img {
   width: 100px;
   height: 100px;
- 
 }
 .sponsorlogo3 img {
   width: 100px;
   height: 100px;
-
 }
 
 /* Sección como funciona------------------------------------------------------------------------------------------------------------------------------*/
 .comofunciona {
   width: 100%;
   height: 660px;
- }
+}
 .comofunciona h2 {
   font-family: var(--fuente2);
   text-align: center;
@@ -424,8 +501,8 @@ height: auto;
   cursor: pointer;
 }
 .comofunciona-container img {
- width: 86px;
- height: auto; 
+  width: 86px;
+  height: auto;
 }
 .comofunciona-container div {
   background-color: var(--verde-acento);
@@ -441,7 +518,7 @@ height: auto;
   background-color: var(--verde-oscuro);
   color: var(--color-fondo);
   transform: scale(1.05) rotate(8deg);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 /* ¿Porqué unirte a nuestra comunidad?------------------------------------------------------------------------------------------------------------------------------*/
 .comunidad {
@@ -449,7 +526,7 @@ height: auto;
   text-align: center;
   background-color: var(--verde-oscuro);
   align-content: center;
-
+  color: var(--Black);
 }
 
 .comunidad-CONTAINER {
@@ -462,20 +539,16 @@ height: auto;
   width: 1200px;
   margin: 50px auto;
   padding: 60px;
-
-
 }
 
 /* Testimonios------------------------------------------------------------------------------------------------------------------------------*/
 
 .testimonios {
-  
   font-family: var(--fuente2);
   text-align: center;
   margin-top: 100px;
   margin-bottom: 180px;
 }
-
 
 .testimonios-container {
   display: flex;
@@ -483,22 +556,28 @@ height: auto;
   padding: 2rem;
   border-radius: 8px;
   margin-top: 320px;
-justify-content: space-around;
+  justify-content: space-around;
 }
 .testimonios-container p {
   padding: 0px 36px 60px 36px;
+  color: var(--Black);
+}
+.testimonios-container h3 {
+  color: var(--Black);
+}
+.testimonios-title h2 {
+  color: var(--Black);
 }
 /* User 1 ------------------*/
-.Usuario1  {
-background-color: #365746;
-margin-top: -300px;
-border-radius: 30px 30px 0px 0px;
-width: 300px;
-height: 200px;
-border-width: 3px;
-border-color: #677e52;
-border-style: solid;
-
+.Usuario1 {
+  background-color: #365746;
+  margin-top: -300px;
+  border-radius: 30px 30px 0px 0px;
+  width: 300px;
+  height: 200px;
+  border-width: 3px;
+  border-color: #677e52;
+  border-style: solid;
 }
 .Usuario1:hover {
   transform: scale(1.05);
@@ -508,6 +587,7 @@ border-style: solid;
   width: 80px;
   height: auto;
 }
+
 .userfondo {
   background-color: var(--Marron-clarito);
   border-width: 3px;
@@ -518,31 +598,31 @@ border-style: solid;
   width: 300px;
   height: 200px;
   position: absolute; /* Añadido */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 /* User 2----------------- */
 .Usuario2 img {
   width: 80px;
-  height:auto;
-  margin:auto;
+  height: auto;
+  margin: auto;
   margin-top: -40px;
 }
 .Usuario2:hover {
   transform: scale(1.05);
 }
-.Usuario2  {
+.Usuario2 {
   background-color: #365746;
-margin-top: -300px;
-border-radius: 30px 30px 0px 0px;
-width: 300px;
-height: 200px;
-border-width: 3px;
-border-color: #677e52;
-border-style: solid;
-  }
-  /* User 3------------------ */
+  margin-top: -300px;
+  border-radius: 30px 30px 0px 0px;
+  width: 300px;
+  height: 200px;
+  border-width: 3px;
+  border-color: #677e52;
+  border-style: solid;
+}
+/* User 3------------------ */
 
-  .Usuario3 img {
+.Usuario3 img {
   width: 80px;
   height: auto;
   margin: auto;
@@ -552,7 +632,7 @@ border-style: solid;
   transform: scale(1.05);
 }
 
-.Usuario3  {
+.Usuario3 {
   background-color: #365746;
   margin-top: -300px;
   border-radius: 30px 30px 0px 0px;
@@ -561,7 +641,7 @@ border-style: solid;
   border-width: 3px;
   border-color: #677e52;
   border-style: solid;
-  }
+}
 
 /* footer-------------------------------------------------------------------------------------------------------------------------------*/
 .pie-de-pagina {
@@ -570,31 +650,31 @@ border-style: solid;
   background-color: var(--Black);
   width: 100%;
   font-family: var(--fuente1);
-  color: var(--color-fondo);
+  color: var(--beige);
 }
 
 .descripcionPagina a h3 {
-  color: var(--color-fondo);
+  color: var(--beige);
   margin: 0px 0px 0px 0px;
 }
 .descripcionPagina div {
-width: auto;
-color: var(--color-fondo);
-max-width: 100px;
-margin-right: 20px;
-margin-top: 0px;
-}
-.descripcionPagina p{
   width: auto;
-    color: var(--color-fondo);
-    text-align: left;
-    max-width:180px;
-    padding: 10px;
-    margin-top: 8px;
-  }
+  color: var(--beige);
+  max-width: 100px;
+  margin-right: 20px;
+  margin-top: 0px;
+}
+.descripcionPagina p {
+  width: auto;
+  color: var(--beige);
+  text-align: left;
+  max-width: 180px;
+  padding: 10px;
+  margin-top: 8px;
+}
 .footerMenu {
   display: flex;
-  font-family: var(--fuente1); 
+  font-family: var(--fuente1);
   justify-content: space-around;
   background-color: var(--Black);
   margin: auto;
@@ -609,12 +689,12 @@ margin-top: 0px;
   margin: 0;
   padding: 0;
   text-align: left;
-  color: var(--color-fondo);
+  color: var(--beige);
 }
 
 .footerMenu a {
   font-family: var(--fuente1);
-  color: var(--color-fondo);
+  color: var(--beige);
   text-decoration: none;
   padding: 10px 15px;
 }
@@ -623,16 +703,15 @@ margin-top: 0px;
   text-decoration: underline;
 }
 
-.footerMenu h3{
+.footerMenu h3 {
   text-align: left;
   padding-left: 10px;
 }
 #copyright {
-  color: var(--color-fondo);
+  color: var(--beige);
   font-family: var(--fuente1);
   text-align: center;
   margin: auto;
   padding-top: 60px;
   padding-bottom: 30px;
-
 }
