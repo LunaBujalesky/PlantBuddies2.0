@@ -15,47 +15,71 @@
 
 <body>
   <header>
-    <!-- este es el menu ------------------------------------------------------------->
-    <div class="logo-container">
-      <img src="assets/imagenes/carita1.png" alt="logoplantbuddies" />
-      <h1>PlantBuddies</h1>
+    <div class="header-invisible"></div>
+    <div class="header-jefe-visible">
+      <!-- este es el menu ------------------------------------------------------------->
+      <div class="logo-container">
+        <img src="assets/imagenes/carita1.png" alt="logoplantbuddies" />
+        <h1>PlantBuddies</h1>
+      </div>
+      <nav>
+        <ul class="header-menu">
+          <li class="header-menu-item"><a href="index.html">Inicio</a></li>
+          <li class="header-menu-item"><a href="registro.html">Registro</a></li>
+          <li class="header-menu-item"><a href="intercambios.html">Intercambios</a></li>
+          <li class="header-menu-item"><a href="comunidad.html">Comunidad</a></li>
+          <li class="header-menu-item"><a href="contacto.html">Contacto</a></li>
+          <li class="header-menu-item">
+            <a href="perfil.html">
+              <img src="assets/imagenes/AvatarBaseUsuario.png" alt="AvatarBaseUsuario" />
+            </a>
+
+            <div class="header-submenu">
+              <div class="submenu-usuario-online"> <!--hijo 1 color oscuro, icono avarar, nombre perfil-->
+                <img src="/PlantBuddies/assets/imagenes/AvatarBaseUsuario.png" alt="">
+                <h3>"Name"</h3>
+                <div class="stars">★ ★ ★ ★ ★</div>
+              </div>
+
+              <div class="submenu-enlaces"><!--hijo 2 color claro, enlaces de submenu-->
+                <ul>
+                  <li>
+                    <img src="assets/imagenes/witchIcon.png" alt="plantIcon">
+                    <a href="perfil.html">Perfil</a>
+                  </li>
+                  <li>
+                    <a href="favoritos.html" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Favoritos</a>
+                  </li>
+                  <li>
+                    <a href="social.html" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Social</a>
+                  </li>
+                  <li> 
+                    <a href="misintercambios.html" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Mis
+                      intercambios</a></li>
+                  <li> <a href="offline" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Cerrar sesión</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="inicio.html">Inicio</a></li>
-        <li><a href="registro.html">Registro</a></li>
-        <li><a href="intercambios.html">Intercambios</a></li>
-        <li><a href="comunidad.html">Comunidad</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="perfil.html"><img class="AvatarBaseUsuario" src="assets/imagenes/AvatarBaseUsuario.png"
-              alt="AvatarBaseUsuario" /></a>
-        </li>
-      </ul>
-    </nav>
+
   </header>
-  <!-- FINencabezadodelaweb ---------------------------------------------------------------------------------------------------------------------------->
-  <!-- menu del perfil deslizable DEBERIA IR DESPLAZADO EN EL ICONO DE AVATR ARRRIBA------------------------------------------>
-  <div class="menuUsuarioConectado">
-    <a href="#" class="menu-ushuario" img src="assets/imagenes/plantIcon.png" alt="plantIcon">“Name”</a>
-    <!-- aca luego deberia poner las estrellas------------------------------------------>
-    <div class="submenu">
-      <a href="#" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Perfil</a>
-      <a href="#" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Favoritos</a>
-      <a href="#" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Social</a>
-      <a href="#" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Mis intercambios</a>
-      <a href="#" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Cerrar sesión</a>
-    </div>
-  </div>
+
   <!-- menu del perfil deslizable Desconectado------------------------------------------
-    <div class="menuUsuarioOffline">
-    <a href="#" class="menu-item">Desconectado</a>
-    <div class="submenuDesconectado">
+    <div class="submenu-usuario-offline">
+      <img class="AvatarBaseUsuario" src="assets/imagenes/AvatarBaseUsuario.png" alt="AvatarBaseUsuario" />
+      <h3> Desconectado </h3>
+    <div class="submenu-conectarse"> 
       <a href="#" img src="assets/plantIcon.png" alt="plantIcon">Iniciar Sesión/a>
     </div>
   </div>>
  
- 
-  <!-decoraciones flotando------------------------------------------>
+  <! -- FINencabezadodelaweb ---------------------------------------------------------------------------------------------------------------------------->
+
+
+  <!--decoraciones flotando------------------------------------------>
   <div class="hero-image">
     <div class="floating-leaf leaf-1"><img class="leave4Icon" src="assets/imagenes/leave4Icon.png" /></div>
     <div class="floating-leaf leaf-2"><img class="mothIcon" src="assets/imagenes/mothIcon.png" /></div>
@@ -114,7 +138,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-------------------------------------------------------------------------------------------------------------------------->
   <section class="BannerSponsors">
     <h4>con el apoyo de</h4>
