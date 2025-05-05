@@ -352,6 +352,7 @@ nav {
   color: var(--color-fondo);
   transform: scale(1.05);
 }
+
 /* El elemento a mostrar/ocultar */
 .log-in-oculto {
   display: none;
@@ -734,11 +735,14 @@ form {
   width: 100%;
   font-family: var(--fuente1);
   color: var(--beige);
+  font-weight: none;
+  margin-top: 300px;
 }
 
 .descripcionPagina a h3 {
   color: var(--beige);
   margin: 0px 0px 0px 0px;
+  
 }
 .descripcionPagina div {
   width: auto;
@@ -789,6 +793,7 @@ form {
 .footerMenu h3 {
   text-align: left;
   padding-left: 10px;
+
 }
 #copyright {
   color: var(--beige);

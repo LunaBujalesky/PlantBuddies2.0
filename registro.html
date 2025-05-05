@@ -18,26 +18,112 @@
   <header>
     <div class="header-invisible"></div>
     <div class="header-jefe-visible">
-      <div class="logo-container"> <!-- este es el menu ---->
+      <!-- este es el menu ------------------------------------------------------------->
+      <div class="logo-container">
         <img src="assets/imagenes/carita1.png" alt="logoplantbuddies" />
         <h1>PlantBuddies</h1>
       </div>
       <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="registro.html">Registro</a></li>
-          <li><a href="intercambios.html">Intercambios</a></li>
-          <li><a href="comunidad.html">Comunidad</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="perfil.html"><img class="AvatarBaseUsuario" src="assets/imagenes/AvatarBaseUsuario.png"
-                alt="AvatarBaseUsuario" /></a>
+        <ul class="header-menu">
+          <li class="header-menu-item"><a href="index.html">Inicio</a></li>
+          <li class="header-menu-item"><a href="registro.html">Registro</a></li>
+          <li class="header-menu-item"><a href="intercambios.html">Intercambios</a></li>
+          <li class="header-menu-item"><a href="comunidad.html">Comunidad</a></li>
+          <li class="header-menu-item"><a href="contacto.html">Contacto</a></li>
+          <li class="header-menu-item">
+            <a href="perfil.html">
+              <img src="assets/imagenes/AvatarBaseUsuario.png" alt="AvatarBaseUsuario" />
+            </a>
+
+            <div class="header-submenu">
+              <div class="submenu-usuario-online"> <!--hijo 1 color oscuro, icono avarar, nombre perfil-->
+                <img src="/PlantBuddies/assets/imagenes/AvatarBaseUsuario.png" alt="">
+                <h3>"Name"</h3>
+                <div class="stars">★ ★ ★ ★ ★</div>
+              </div>
+
+              <div class="submenu-enlaces"><!--hijo 2 color claro, enlaces de submenu-->
+                <ul>
+                  <li>
+                    <img src="assets/imagenes/witchIcon.png" alt="plantIcon">
+                    <a href="perfil.html">Perfil</a>
+                  </li>
+                  <li>
+                    <a href="favoritos.html" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Favoritos</a>
+                  </li>
+                  <li>
+                    <a href="social.html" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Social</a>
+                  </li>
+                  <li>
+                    <a href="misintercambios.html" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Mis
+                      intercambios</a>
+                  </li>
+                  <li> <a href="offline" img src="assets/imagenes/plantIcon.png" alt="plantIcon">Cerrar sesión</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
         </ul>
       </nav>
     </div>
+
   </header>
   <!-- FINencabezadodelaweb ---------------------------------------------------------------------------------------------------------------------------->
+  <!--hijo 2 color claro, enlaces de submenu-->
+  <section>
+    <div class="registra-tu-planta">
+      <h3>Registra tu planta</h3>
+      <img src="/PlantBuddies/assets/imagenes/PotatoIcon.png" alt="IconoPapa">
+    </div>
 
+    <!--Registra contenedor-->
+    <div class="registra-abuelo">
+     
+      <!--Registra hijo 1 formulario-->
+      <div class="formulario-plantas">
+        <form>
+          <div class="titulo-container">
+            <div class="Titulo"> <p>Título</p></div>
+            <input type="Titulo"
+              placeholder="Dale un nombre atractivo a tu publicación que haga que otras personas se fijen en él."
+              class="input-Titulo">
+          </div>
+          <div class="Especie-container">
+            <div class="Especie"><p>Especie</p></div>
+            <input type="Especie" placeholder="Escribe su nombre científico y su nombre común." class="input-Especie">
+          </div>
+          <div class="Categorías-container">
+            <div class="Categorías"><p>Categorías</p></div>
+            <input type="Categorías" placeholder=" Introduce palabras clave para que
+      sea ubicada en el buscador como #suculenta" class="input-Categorías">
+          </div>
+          <div class="Descripción-container">
+            <div class="Descripción"><p>Descripción</p></div>
+            <input type="Descripción" placeholder="Cuéntale a otras personas porqué 
+      deberían enamorarse de tu propuesta.
+      Incluye detalles que deberían saber antes
+      de ofertar, dimensiones, estado, edad." class="input-Descripción">
+          </div>
+          <button class="boton-registro1">Dar en adopción</button>
+        </form>
+      </div>
+
+      <!--Registra hijo 2 imagenes-->
+      <div class="sube-fotos-oferta">
+        <div class="bigphoto">
+          <img src="/PlantBuddies/assets/imagenes/Group21.jpg" alt="placeholder">
+        </div>
+        <div class="littleones">
+          <img src="/PlantBuddies/assets/imagenes/Group67.jpg" alt="placeholder">
+          <img src="/PlantBuddies/assets/imagenes/Group67.jpg" alt="placeholder">
+          <img src="/PlantBuddies/assets/imagenes/Group67.jpg" alt="placeholder">
+        </div>
+        <button class="boton-registro2">Cargar fotos</button>
+      </div>
+    </div>
+    <img class="ranaSaltando" src="/PlantBuddies/assets/imagenes/rana2.png" alt="ranaSaltando">
+    <img class="ranaSaltando2" src="/PlantBuddies/assets/imagenes/rana1.png" alt="ranaSaltando">
+  </section>
 
 
   <!-- footer, fin de la primera pagina index-->
