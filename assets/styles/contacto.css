@@ -29,10 +29,10 @@
 }
 .decoracion2 {
   position: absolute;
-  bottom: 9%;
-  left: 66%;
+  bottom: -2%;
+  left: 70%;
   height: auto;
-  width: 500px;
+  width: 400px;
   z-index: 1;
   box-shadow: 0 6px 12px --verde-goblin(0,0,0,0.3);
 }

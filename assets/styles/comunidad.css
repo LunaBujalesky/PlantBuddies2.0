@@ -21,3 +21,47 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* encabezado comunidad */
+.encabezado-comunidad {
+  width: 100%;
+height: 300px;
+background-color: var(--verde-oscuro);
+font-family: var(--fuente2);
+color: var(--Marron-clarito);
+
+}
+
+.encabezado-comunidad h2{
+  font-weight: normal;
+margin-top: 0px;
+text-align: left;
+padding: 64px 200px 0px 240px;
+}
+.encabezado-comunidad  p{
+  font-weight: normal;
+margin-top: 0px;
+text-align: left;
+padding: 10px 600px 0px 240px;
+}
+.ideas {
+}
+
+.ideas  {
+  background-color: var(--verde-lima);
+  border-width: 1px;
+  border-color: #365746;
+  border-style: solid;
+  padding: 1rem 2rem;
+  font-size: medium;
+  font-family: var(--fuente2);
+  color: var(--Marron-oscuro);
+  cursor: pointer;
+  border-radius: 4px;
+  width: auto;
+  display: inline-block;
+  transition: all 0.3s ease;
+margin-left: 1460px;
+margin-top: 8px;
+  text-align: center;
+}
