@@ -23,36 +23,35 @@
   height: 290px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .intercambio-encabezado h2 {
   color: var(--Marron-clarito);
   font-family: var(--fuente2);
-  margin-top: 140px;
-  margin-left: 230px;
-  margin-bottom: 30px;
+  margin: 100px 0 30px 360px;
+  font-weight: normal;
+  font-size: 32px;
 }
 
 .intercambio-encabezado p {
   color: var(--Marron-clarito);
   font-family: var(--fuente2);
-  margin-top: 0px;
-  margin-left: 230px;
-  margin-bottom: 42px;
+  margin: 0px 0 42px 360px;
 }
 .contador-ecologico {
-  background-color: var(--Marron-clarito);
-  width: 400px;
-  height: 80px;
+  background-color: var(--Black);
+  width: 380px;
+  height: 66px;
   border-radius: 32px;
-  margin-top: 140px;
-  margin-bottom: 56px;
-  margin-right: 60px;
+  margin: 130px 0 0 360px;
 }
 .contador-ecologico p {
-  font-family: cambria;
-  color: var(--Black);
+  font-family: var(--fuente1);
+  color: beige;
+  font-size: 30px;
+  font-weight: normal;
+  margin: auto;
+  padding: 18px;
   text-align: center;
 }
 .buscador {
@@ -61,110 +60,50 @@
   height: 60px;
   border-radius: 90px;
   opacity: 60%;
-  margin: 100px 0px 0px 0px;
+  margin: 20px 0px 0px 1500px;
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .buscador img {
   width: 40px;
   height: auto;
-  margin: 12px 26px 0px 244px;
+  margin: -90px 0px 0px 240px;
+}
+.buscador input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--Black);
+  font-family: var(--fuente1);
+  font-size: 22px;
+  margin: 18px 0px 0px 20px;
 }
 
 /* Plantilla Oferta que debe ir dentro de GRid---------------------------------*/
-.planta-en-oferta { /* imagen */
-  width: 300px;
-  height: auto;
-  margin-bottom: -40px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #677e52;
-  border-radius: 82px;
-  cursor: pointer;
-  z-index: 1; 
-}
-.planta-en-oferta:hover { 
-  transform: scale(1.05);
-}
-.avatar-usuario-ofertador { /* icono usuario */
-  width: 60px;
-  height: 60px;
-  margin: 20px 0px 0px 20px;
-}
-.plantilla-oferta:hover { /* animacion de toda la plantilla */
-  transform: scale(1.05);
-}
-.plantilla-oferta { /* contenedor padre de la plantilla */
-  width: 300px;
-  height: auto;
-  border-radius: 40px 40px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#comentarios {
-  width: 8px;
-  height: auto;
-  margin: auto;
-}
-/* Div bases hijos de la plantilla */
-.parte-superior-oferta {
-  background-color: var(--verde-oscuro);
-  width: 500px;
-  height: 800px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #677e52;
-  border-radius: 40px 40px 0px 0px; 
-  box-sizing: border-box;
-  font-family: var(--fuente1);
-  color: var(--Black);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.parte-inferior-oferta {
-  background-color: var(--verde-lima);
-  width: 500px;
-  height: 800px;
-  border-width: 1px;
-  border-color: #677e52;
-  border-style: solid;
-  border-radius: 0px 0px 40px 40px;
-  font-family: var(--fuente1);
-  display: flex;
-}
-.alineacion-botones {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 20px;
-}
 
 /* sección de la grid con todas las ofertas disponibles---------------------- */
 
 /* grilla*/
-.ofertas {
+.ofertas-grid {
   display: grid;
-  grid-template-areas:
-    "nav header header"
-    "nav productos publicidad"
-    "nav servicios publicidad"
-    "nav footer footer";
-  grid-template-rows: 100px 1fr 1fr 75px;
-  grid-template-columns: 20% auto 15%;
+  grid-template-columns: repeat(4, 1fr); /* 5 columnas de igual tamaño */
+  grid-template-rows: repeat(3, auto); /* 3 filas que se ajustan al contenido */
+  height: auto;
+  width: 1000px;
+  row-gap: 50px;
+  column-gap: 8px;
+  align-items: center; /* eje vertical de las celdas */
+  justify-items: center;/* contenido dentro de las celdas */
+  margin: 0 auto; /* centra el grid dentro del contenedor padre */
+}
 
-  justify-items: stretch; /* start | end |
-  center | stretch */
-  align-items: stretch; /* start | end |
-  center | stretch */
-  display: grid;
-  width: 95%;
-  grid-template-columns: auto auto;
-  grid-column-gap: 10px;
-  grid-template-rows: 100px 100px;
-  grid-row-gap: 10px;
+/* Estilo común para todos los elementos del grid */
+.ofertas-grid > div {
+  background-color: var(--verde-acento);
+  height: 300px;
+  width: 200px;
+  border-radius: 44px;
+  padding: 0px;
+
 }
 
 /* Efectos de los item grilla------------------------------------------------------------------------------*/
