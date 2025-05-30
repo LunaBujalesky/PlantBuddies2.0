@@ -11,7 +11,7 @@
   --Marron-oscuro: #1c3d19;
   --Marron-intermedio: #cfbb99;
   --Marron-clarito: #e5d7c4;
-  --falso-blanco:#e5e0D8;
+  --falso-blanco: #e5e0D8;
 }
 
 /* Grupo de tipografías */
@@ -27,15 +27,13 @@ body {
   background-color: #e5d7c4;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
-/*
-* {
-  margin: 0;
-  padding: 0;
-}
-  */
+
+
+
+
 
 /* Encabezado------------------------------------------------------------------------------------------------------- */
 .header-jefe-visible {
@@ -109,7 +107,7 @@ nav {
   transition: all 0.3s ease;
 }
 
-.header-menu > li:last-child {
+.header-menu>li:last-child {
   position: relative;
 }
 
@@ -121,9 +119,10 @@ nav {
 
 
 .header-menu-item img {
-  width:60px;
+  width: 60px;
   height: 60px;
 }
+
 /* MenuDeslizable Conectado------------------------------------------------------------------------------------------------------------------------- */
 /* contenedor padre menu desplegable*/
 .header-submenu {
@@ -139,7 +138,7 @@ nav {
   /*display: block; <- clave */
 }
 
-.header-menu > li:last-child:hover .header-submenu {
+.header-menu>li:last-child:hover .header-submenu {
   display: block;
 }
 
@@ -159,16 +158,19 @@ nav {
   width: 65px;
   height: 65px;
 }
+
 .submenu-usuario-online h3 {
   padding: 0;
   font-family: var(--fuente2);
   font-weight: normal;
   color: var(--beige);
 }
+
 .submenu-usuario-online .stars {
   margin-top: 70px;
   color: var(--beige);
 }
+
 /* Diseño hijo 2 color claro*/
 .submenu-enlaces {
   /* contenedor*/
@@ -277,12 +279,14 @@ nav {
   background-color: var(--Marron-intermedio);
   margin: 80px auto;
 }
+
 /* cartel bienvenida */
 .text-content {
   justify-content: left;
   width: 875px;
   height: auto;
 }
+
 .banner-title {
   background-color: var(--Black);
   border-radius: 8px;
@@ -292,12 +296,14 @@ nav {
   margin-top: 30px;
   border-radius: 0px 18px 18px 0px;
 }
+
 .banner-title h2 {
   font-family: var(--fuente2);
   color: var(--Marron-clarito);
   text-align: left;
   padding-left: 20px;
 }
+
 .p-container {
   border-radius: 26px;
   margin: 36px 0px 6px 38px;
@@ -305,6 +311,7 @@ nav {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px 20px 6px 0px;
 }
+
 .text-content p {
   font-family: var(--fuente2);
   color: var(--Black);
@@ -328,6 +335,7 @@ nav {
   position: relative;
   margin-top: 100px;
 }
+
 /* Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 /* Estilo para la etiqueta que funciona como botón */
 .boton-comienza-ahora {
@@ -362,28 +370,34 @@ nav {
   transition: all 0.3s ease;
   z-index: 1000;
 }
+
 /* Mostrar el elemento cuando se clikeo el falso boton---------------------- */
-#aparecer-login:checked ~ .log-in-oculto {
+#aparecer-login:checked~.log-in-oculto {
   display: flex;
   justify-content: center;
   animation: fadeIn 0.5s;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 /* Cambiar el texto del botón cuando está abierto*/
-#aparecer-login:checked + .button-label::after {
+#aparecer-login:checked+.button-label::after {
   content: " Haz clic para ocultar";
 }
+
 /* Checkbox oculto para controlar el modal */
 #aparecer-login {
   display: none;
 }
+
 /* Componentes del log in oculto cuando se abre-------------------------------------------------------------------------- */
 .close-button {
   position: absolute;
@@ -402,6 +416,7 @@ nav {
   font-size: 18px;
   font-weight: bold;
 }
+
 /* Estilos base para ambos estados del goblin */
 .goblin-ojos-cerrados,
 .goblin-ojos-abiertos {
@@ -415,6 +430,7 @@ nav {
   background-repeat: no-repeat;
   transition: opacity 0.3s ease;
 }
+
 /* El modal con el formulario */
 .modal {
   background-color: var(--beige);
@@ -430,6 +446,7 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+
 /* Contenedor para el goblin y sus variantes */
 .goblin-container {
   position: relative;
@@ -437,6 +454,7 @@ nav {
   width: 100%;
   margin: 20px 0;
 }
+
 /* Estilos para los campos del formulario */
 .input-field {
   width: 90%;
@@ -447,18 +465,21 @@ nav {
   font-family: var(--fuente2);
   background-color: var(--beige);
 }
+
 form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .goblin-ojos-cerrados img,
 .goblin-ojos-abiertos img {
   /*estilos para las imágenes */
   width: 100%;
   height: auto;
 }
+
 /* Goblin con ojos abiertos (por defecto visible) */
 .goblin-ojos-abiertos {
   opacity: 1;
@@ -470,13 +491,14 @@ form {
 }
 
 /* Cuando el campo de contraseña está enfocado, invertir las opacidades */
-.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within~.goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within~.goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
+
 /* Botón de login */
 .login-button {
   background-color: var(--verde-oscuro);
@@ -496,6 +518,7 @@ form {
   background-color: #2a4535;
   transform: scale(1.02);
 }
+
 .eye-icon {
   position: absolute;
   right: 10px;
@@ -504,22 +527,25 @@ form {
   cursor: pointer;
   color: var(--verde-oscuro);
 }
+
 /* Campo de contraseña con icono de ojo */
 .password-container {
   position: relative;
   width: 95%;
   margin: 0 auto;
 }
+
 /* Cambio de estado cuando se enfoca el campo de contraseña */
-.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos,
-.password-container input:focus ~ .goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within~.goblin-container .goblin-ojos-abiertos,
+.password-container input:focus~.goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados,
-.password-container input:focus ~ .goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within~.goblin-container .goblin-ojos-cerrados,
+.password-container input:focus~.goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
+
 /* FIN Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 
 /* Sección de sponsors ------------------------------------------------------------------------------------------------------------------------------*/
@@ -557,6 +583,7 @@ form {
   width: 100px;
   height: 100px;
 }
+
 .sponsorlogo3 img {
   width: 100px;
   height: 100px;
@@ -567,12 +594,14 @@ form {
   width: 100%;
   height: 660px;
 }
+
 .comofunciona h2 {
   font-family: var(--fuente2);
   text-align: center;
   color: var(--verde-oscuro);
   margin-top: 160px;
 }
+
 .comofunciona-container {
   display: flex;
   align-items: center;
@@ -585,10 +614,12 @@ form {
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+
 .comofunciona-container img {
   width: 86px;
   height: auto;
 }
+
 .comofunciona-container div {
   background-color: var(--verde-acento);
   width: 300px;
@@ -605,6 +636,7 @@ form {
   transform: scale(1.05) rotate(8deg);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 /* ¿Porqué unirte a nuestra comunidad?------------------------------------------------------------------------------------------------------------------------------*/
 .comunidad {
   font-family: var(--fuente2);
@@ -643,16 +675,20 @@ form {
   margin-top: 320px;
   justify-content: space-around;
 }
+
 .testimonios-container p {
   padding: 0px 36px 60px 36px;
   color: var(--Black);
 }
+
 .testimonios-container h3 {
   color: var(--Black);
 }
+
 .testimonios-title h2 {
   color: var(--Black);
 }
+
 /* User 1 ------------------*/
 .Usuario1 {
   background-color: #365746;
@@ -664,9 +700,11 @@ form {
   border-color: #677e52;
   border-style: solid;
 }
+
 .Usuario1:hover {
   transform: scale(1.05);
 }
+
 .Usuario1 img {
   margin-top: -40px;
   width: 80px;
@@ -682,9 +720,11 @@ form {
   margin-top: 66px;
   width: 300px;
   height: 200px;
-  position: absolute; /* Añadido */
+  position: absolute;
+  /* Añadido */
   box-sizing: border-box;
 }
+
 /* User 2----------------- */
 .Usuario2 img {
   width: 80px;
@@ -692,9 +732,11 @@ form {
   margin: auto;
   margin-top: -40px;
 }
+
 .Usuario2:hover {
   transform: scale(1.05);
 }
+
 .Usuario2 {
   background-color: #365746;
   margin-top: -300px;
@@ -705,6 +747,7 @@ form {
   border-color: #677e52;
   border-style: solid;
 }
+
 /* User 3------------------ */
 
 .Usuario3 img {
@@ -713,6 +756,7 @@ form {
   margin: auto;
   margin-top: -40px;
 }
+
 .Usuario3:hover {
   transform: scale(1.05);
 }
@@ -743,8 +787,9 @@ form {
 .descripcionPagina a h3 {
   color: var(--beige);
   margin: 0px 0px 0px 0px;
-  
+
 }
+
 .descripcionPagina div {
   width: auto;
   color: var(--beige);
@@ -752,6 +797,7 @@ form {
   margin-right: 20px;
   margin-top: 0px;
 }
+
 .descripcionPagina p {
   width: auto;
   color: var(--beige);
@@ -760,6 +806,7 @@ form {
   padding: 10px;
   margin-top: 8px;
 }
+
 .footerMenu {
   display: flex;
   font-family: var(--fuente1);
@@ -796,6 +843,7 @@ form {
   padding-left: 10px;
 
 }
+
 #copyright {
   color: var(--beige);
   font-family: var(--fuente1);
@@ -804,3 +852,100 @@ form {
   padding-top: 60px;
   padding-bottom: 30px;
 }
+/* Contenedor principal */
+main {
+  flex: 1 0 auto;
+}
+
+/* Pantallas chicas: celulares */
+@media (max-width: 600px) {
+  .BannerSponsors {
+    height: 80px;
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+  .supporters-logos {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .supporters-logos img {
+    width: 40px;
+    height: 40px;
+  }
+  .container-bienvenida {
+    flex-direction: column;
+    width: 98vw;
+    height: auto;
+    margin: 20px auto;
+    padding: 0;
+  }
+  .goblinlandingpage1 img {
+    width: 90vw;
+    margin-top: 20px;
+  }
+  .banner-title {
+    width: 95vw;
+    height: auto;
+    margin-top: 10px;
+  }
+  .p-container {
+    margin: 16px 0 6px 0;
+    padding: 10px 5px 6px 5px;
+  }
+  .comunidad-CONTAINER {
+    width: 98vw;
+    padding: 20px 5px;
+  }
+}
+
+/* Tablets (≥ 768px) */
+@media (min-width: 768px) {
+  .header-jefe-visible {
+    height: 90px;
+    font-size: 1.1rem;
+  }
+  .BannerSponsors {
+    height: 140px;
+    font-size: 1.1rem;
+    padding: 18px 0;
+  }
+  .supporters-logos img {
+    width: 80px;
+    height: 80px;
+  }
+  .container-bienvenida {
+    flex-direction: row;
+    width: 90vw;
+    height: 400px;
+    margin: 60px auto;
+    padding: 20px;
+  }
+  .goblinlandingpage1 img {
+    width: 350px;
+    margin-top: 40px;
+  }
+  .banner-title {
+    width: 400px;
+    height: 80px;
+    margin-top: 20px;
+  }
+  .p-container {
+    margin: 24px 0 8px 0;
+    padding: 16px 10px 8px 10px;
+  }
+  .comunidad-CONTAINER {
+    width: 90vw;
+    padding: 40px 20px;
+  }
+}
+/* Desktops grandes (≥ 1200px) */
+@media (min-width: 1200px) {
+  .header-jefe-visible {
+    
+    
+    height: 200px;
+
+  }
+
+}
+

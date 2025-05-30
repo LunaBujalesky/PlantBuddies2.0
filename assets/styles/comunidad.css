@@ -65,3 +65,74 @@ margin-left: 1460px;
 margin-top: 8px;
   text-align: center;
 }
+
+/* Celulares (≤600px) */
+@media (max-width: 600px) {
+  .encabezado-comunidad {
+    height: 180px;
+    padding: 0 10px;
+  }
+  .encabezado-comunidad h2 {
+    padding: 24px 10px 0 10px;
+    font-size: 1.3rem;
+  }
+  .encabezado-comunidad p {
+    padding: 10px 10px 0 10px;
+    font-size: 1rem;
+  }
+  .ideas {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 90vw;
+    font-size: 1rem;
+    display: block;
+  }
+}
+
+/* Tablets (601px a 1199px) */
+@media (min-width: 601px) and (max-width: 1199px) {
+  .encabezado-comunidad {
+    height: 220px;
+    padding: 0 40px;
+  }
+  .encabezado-comunidad h2 {
+    padding: 40px 60px 0 60px;
+    font-size: 1.7rem;
+  }
+  .encabezado-comunidad p {
+    padding: 10px 60px 0 60px;
+    font-size: 1.1rem;
+  }
+  .ideas {
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+    top: 24px;
+    margin-left: 0;
+    margin-top: 0;
+    width: auto;
+    font-size: 1.1rem;
+  }
+}
+
+/* PC (≥1200px) */
+@media (min-width: 1200px) {
+  .encabezado-comunidad {
+    height: 300px;
+    padding: 0;
+  }
+  .encabezado-comunidad h2 {
+    padding: 64px 200px 0px 240px;
+    font-size: 2rem;
+  }
+  .encabezado-comunidad p {
+    padding: 10px 600px 0px 240px;
+    font-size: 1.2rem;
+  }
+  .ideas {
+    margin-left: 1460px;
+    margin-top: 8px;
+    width: auto;
+    font-size: medium;
+  }
+}
