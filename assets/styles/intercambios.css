@@ -61,6 +61,7 @@
   border-radius: 90px;
   opacity: 60%;
   margin: 20px 0px 0px 1500px;
+  position: absolute;
   box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .buscador img {
@@ -118,3 +119,124 @@
   z-index: 5;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+/* Tablets (≥ 768px) */
+@media (max-width: 768px) {
+  .intercambio-encabezado {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .intercambio-encabezado h2 {
+    margin: 40px 20px 20px 20px;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .intercambio-encabezado p {
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .contador-ecologico {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .buscador {
+    width: 80%;
+     position: static;
+    margin: 20px auto;
+  }
+
+  .buscador img {
+    margin: -40px 0 0 85%;
+  }
+
+  .ofertas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    gap: 20px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+  }
+
+  .ofertas-grid > div {
+    width: 180px;
+    height: 270px;
+  }
+  .pie-de-pagina {
+    margin-top: auto;
+  }
+}
+
+/* mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .intercambio-encabezado {
+    padding: 15px;
+  }
+
+  .intercambio-encabezado h2 {
+    font-size: 24px;
+    margin: 30px 15px 15px 15px;
+  }
+
+  .contador-ecologico {
+    width: 90%;
+    height: 50px;
+  }
+
+  .contador-ecologico p {
+    font-size: 24px;
+    padding: 12px;
+  }
+
+  .buscador {
+    width: 90%;
+    height: 50px;
+     position: static;
+     margin-left: auto;
+  }
+
+  .buscador input {
+    font-size: 18px;
+    margin: 14px 0 0 15px;
+  }
+
+  .buscador img {
+    width: 30px;
+    margin: -35px 0 0 85%;
+  }
+
+  .ofertas-grid {
+    grid-template-columns: 1fr;
+    width: 95%;
+    gap: 30px;
+  margin-bottom: 100px;
+  }
+
+  .ofertas-grid > div {
+    width: 200px;
+    height: 300px;
+  }
+
+  .grid-item:hover {
+    transform: scale(1.02);
+  }
+  .pie-de-pagina {
+    margin-top: auto;
+  }
+}
+
+/* Desktops grandes (≥ 1200px) */
+@media (min-width: 1200px) {
+.ofertas-grid {
+    
+
+margin-bottom: 100px;
+      margin-top: 100px;
+  }
+.pie-de-pagina {
+    margin-top: auto;
+  }
+  }

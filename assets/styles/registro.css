@@ -212,3 +212,109 @@
   margin-left: 1600px;
   margin-top: -198px;
 }
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .registra-tu-planta h3 {
+    font-size: 24px;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .registra-tu-planta img {
+    display: none;
+  }
+
+  .registra-abuelo {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .formulario-plantas > form > div {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .formulario-plantas > form > div > input {
+    width: 70%;
+  }
+
+  .sube-fotos-oferta {
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  .bigphoto img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .littleones {
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .littleones img {
+    width: 80px;
+  }
+
+  .boton-registro1,
+  .boton-registro2 {
+    margin: 20px auto;
+    display: block;
+  }
+
+  .ranaSaltando,
+  .ranaSaltando2 {
+    display: none;
+  }
+}
+
+/* Tablets (≥ 768px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .registra-abuelo {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .formulario-plantas > form > div {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .sube-fotos-oferta {
+    margin-right: 20px;
+  }
+
+  .bigphoto img {
+    width: 300px;
+  }
+
+  .littleones img {
+    width: 90px;
+  }
+
+  .ranaSaltando {
+    margin-left: 50px;
+    width: 150px;
+  }
+
+  .ranaSaltando2 {
+    margin-left: 90%;
+    width: 150px;
+  }
+}
+
+/* Desktops grandes (≥ 1200px) */
+@media (min-width: 1200px) {
+  .registra-abuelo {
+    width: 1200px;
+    margin: 40px auto;
+  }
+
+  .ranaSaltando2 {
+    margin-left: 80%;
+  }
+}
