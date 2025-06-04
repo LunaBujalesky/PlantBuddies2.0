@@ -11,7 +11,7 @@
   --Marron-oscuro: #1c3d19;
   --Marron-intermedio: #cfbb99;
   --Marron-clarito: #e5d7c4;
-  --falso-blanco: #e5e0D8;
+  --falso-blanco: #e5e0d8;
 }
 
 /* Grupo de tipografías */
@@ -29,11 +29,6 @@ body {
   flex-direction: column;
   box-sizing: border-box;
 }
-
-
-
-
-
 
 /* Encabezado------------------------------------------------------------------------------------------------------- */
 .header-jefe-visible {
@@ -81,7 +76,28 @@ nav {
   margin: 0;
   padding: 0;
 }
-
+header {
+  position: relative;
+}
+/*menu hamburguesa en celulares*/
+.menu_hamburguesa_principal {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  flex-direction: column;
+}
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--Black);
+  margin: 4px 0;
+  font-family: var(--fuente2);
+  color: var(--Marron-clarito);
+  transition: 0.3s;
+}
+/*MENU EN COMPUTADORAS*/
 .header-menu {
   display: flex;
   gap: 2rem;
@@ -106,7 +122,7 @@ nav {
   transition: all 0.3s ease;
 }
 
-.header-menu>li:last-child {
+.header-menu > li:last-child {
   position: relative;
 }
 
@@ -115,7 +131,6 @@ nav {
   text-decoration: underline;
   transform: scale(1.05);
 }
-
 
 .header-menu-item img {
   width: 60px;
@@ -137,7 +152,7 @@ nav {
   /*display: block; <- clave */
 }
 
-.header-menu>li:last-child:hover .header-submenu {
+.header-menu > li:last-child:hover .header-submenu {
   display: block;
 }
 
@@ -179,7 +194,6 @@ nav {
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
 }
 
 .submenu-enlaces ul {
@@ -194,7 +208,6 @@ nav {
   border-bottom: 1px solid #eee;
   align-items: center;
 }
-
 
 .submenu-enlaces img {
   width: 35px;
@@ -371,7 +384,7 @@ nav {
 }
 
 /* Mostrar el elemento cuando se clikeo el falso boton---------------------- */
-#aparecer-login:checked~.log-in-oculto {
+#aparecer-login:checked ~ .log-in-oculto {
   display: flex;
   justify-content: center;
   animation: fadeIn 0.5s;
@@ -388,7 +401,7 @@ nav {
 }
 
 /* Cambiar el texto del botón cuando está abierto*/
-#aparecer-login:checked+.button-label::after {
+#aparecer-login:checked + .button-label::after {
   content: " Haz clic para ocultar";
 }
 
@@ -490,11 +503,11 @@ form {
 }
 
 /* Cuando el campo de contraseña está enfocado, invertir las opacidades */
-.password-container:focus-within~.goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within~.goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
 
@@ -535,13 +548,13 @@ form {
 }
 
 /* Cambio de estado cuando se enfoca el campo de contraseña */
-.password-container:focus-within~.goblin-container .goblin-ojos-abiertos,
-.password-container input:focus~.goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos,
+.password-container input:focus ~ .goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within~.goblin-container .goblin-ojos-cerrados,
-.password-container input:focus~.goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados,
+.password-container input:focus ~ .goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
 
@@ -773,7 +786,7 @@ form {
 
 /* footer-------------------------------------------------------------------------------------------------------------------------------*/
 .pie-de-pagina {
- flex-shrink: 0; 
+  flex-shrink: 0;
   margin-top: auto;
   background-color: var(--Black);
   width: 100%;
@@ -785,7 +798,6 @@ form {
 .descripcionPagina a h3 {
   color: var(--beige);
   margin: 0px 0px 0px 0px;
-
 }
 
 .descripcionPagina div {
@@ -839,7 +851,6 @@ form {
 .footerMenu h3 {
   text-align: left;
   padding-left: 10px;
-
 }
 
 #copyright {
@@ -853,11 +864,42 @@ form {
 /* Contenedor principal */
 main {
   flex: 1 0 auto;
-   min-height: 100vh;
+  min-height: 100vh;
 }
 
 /* Pantallas chicas: celulares */
 @media (max-width: 600px) {
+  /* Para cambiar de menu al hamburguesa en celular*/
+  .menu_hamburguesa_principal {
+    display: flex;
+  }
+  .nav {
+    justify-content: space-between;
+  }
+  .header-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--verde-acento);
+  }
+  .nav > li {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    margin: 15px 0;
+  }
+  .header-menu .show {
+    display: flex;
+    background-color: var(--verde-acento);
+  }
+  .container-bienvenida {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    padding: 0;
+  }
   .BannerSponsors {
     height: 80px;
     font-size: 0.9rem;
@@ -896,25 +938,25 @@ main {
     padding: 20px 5px;
   }
   .testimonios-container {
-  display: flex column;
-  align-items: center;
-  padding: 2rem;
-  border-radius: 8px;
-  margin-top: 320px;
-  justify-content: space-around;
-  align-content: stretch;
-}
-.comofunciona-container {
-  display: flex column;
-  align-items: center;
-  padding: 2rem;
-  justify-content: space-between;
-}
-.comofunciona {
-  width: 100%;
-  height: auto;
-}
-.pie-de-pagina {
+    display: flex column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 320px;
+    justify-content: space-around;
+    align-content: stretch;
+  }
+  .comofunciona-container {
+    display: flex column;
+    align-items: center;
+    padding: 2rem;
+    justify-content: space-between;
+  }
+  .comofunciona {
+    width: 100%;
+    height: auto;
+  }
+  .pie-de-pagina {
     margin-top: auto;
   }
 }
@@ -966,19 +1008,17 @@ main {
 @media (min-width: 1200px) {
   .header-jefe-visible {
     height: 105px;
-
   }
-.container-bienvenida {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  width: 880px;
-  height: 500px;
-  background-color: var(--Marron-intermedio);
-  margin: 80px auto;
-}
-.pie-de-pagina {
+  .container-bienvenida {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 880px;
+    height: 500px;
+    background-color: var(--Marron-intermedio);
+    margin: 80px auto;
+  }
+  .pie-de-pagina {
     margin-top: auto;
   }
 }
-

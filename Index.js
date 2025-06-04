@@ -57,3 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+// menu hamburguesa cuando ingresa por celular
+
+const hamburguesa =document.querySelector (#hamburguesa);
+const enlaces = document.querySelector (#nav-links);
+
+hamburguesa.addEventListener('click', () => {
+  enlaces.classList.toggle('show');
+  hamburguesa.classList.toggle('active');
+}
