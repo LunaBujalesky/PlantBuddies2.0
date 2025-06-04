@@ -893,13 +893,44 @@ main {
     display: flex;
     background-color: var(--verde-acento);
   }
+    /* primera parte bienvenida*/
+  .banner-title {
+margin-top: 0;
+border-radius: 0px 0px 116px 116px;
+width: auto;
+height: 219PX;
+  }
+.banner-title H2 {
+  text-align: center;
+}
+  .text-content {
+    margin: 16px 0 6px 0;
+    padding: 10px 5px 6px 5px;
+    text-align: center;
+    width: 600px;
+    height: 424px;
+    
+  }
+.p-container {
+  border-radius: 19px 10px 120px 120px;
+}
   .container-bienvenida {
     flex-direction: column;
     width: 100%;
     height: auto;
-    margin: 20px auto;
+    margin-top: 0;
     padding: 0;
+    position: absolute;
+    top: 0; /* ajusta según la altura del header */
+  
   }
+
+  .goblinlandingpage1 img {
+    width: 90vw;
+    margin-top: 20px;
+  }
+
+   /* segunda parte banner sponsors */
   .BannerSponsors {
     height: 80px;
     font-size: 0.9rem;
@@ -913,40 +944,11 @@ main {
     width: 40px;
     height: 40px;
   }
-  .container-bienvenida {
-    flex-direction: column;
-    width: 98vw;
-    height: auto;
-    margin: 20px auto;
-    padding: 0;
-  }
-  .goblinlandingpage1 img {
-    width: 90vw;
-    margin-top: 20px;
-  }
-  .banner-title {
-    width: 95vw;
-    height: auto;
-    margin-top: 10px;
-  }
-  .p-container {
-    margin: 16px 0 6px 0;
-    padding: 10px 5px 6px 5px;
-  }
-  .comunidad-CONTAINER {
-    width: 98vw;
-    padding: 20px 5px;
-  }
-  .testimonios-container {
-    display: flex column;
-    align-items: center;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-top: 320px;
-    justify-content: space-around;
-    align-content: stretch;
-  }
-  .comofunciona-container {
+ 
+
+
+   /* segunda parte como funciona */
+   .comofunciona-container {
     display: flex column;
     align-items: center;
     padding: 2rem;
@@ -956,6 +958,24 @@ main {
     width: 100%;
     height: auto;
   }
+
+     /* segunda parte se parte de la comunidad */
+     .comunidad-CONTAINER {
+      width: 98vw;
+      padding: 20px 5px;
+    }
+     /* tercera parte testimonios */
+  .testimonios-container {
+    display: flex column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 320px;
+    justify-content: space-around;
+    align-content: stretch;
+  }
+
+     /* footer mobile */
   .pie-de-pagina {
     margin-top: auto;
   }
