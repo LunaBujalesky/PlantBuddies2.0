@@ -1,3 +1,14 @@
+_Funcion en JS Menu hamburguesa, cada vez que clickeo la clase "hamburguesa", me abre el menú, que está oculto o desoculto dependientemente del viewport seleccionado en mediaquerie,
+se activa o desactiva con el "display: none", "display: flex"._
+
+const hamburguesa =document.querySelector (#hamburguesa);
+const enlaces = document.querySelector (#nav-links);
+
+hamburguesa.addEventListener('click', () => {
+  enlaces.classList.toggle('show');
+  hamburguesa.classList.toggle('active');
+}
+------------------------------------------
 Modal con Javascript vs Modal con css:
 
 *El modal con CSS:* 
