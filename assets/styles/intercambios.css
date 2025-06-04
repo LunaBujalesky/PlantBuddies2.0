@@ -119,6 +119,33 @@
   z-index: 5;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+/* Personalización de la paginación */
+.pagination .page-link {
+  color: var(--verde-acento);
+  border-color: var(--verde-acento);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--verde-acento);
+  border-color: var(--verde-acento);
+}
+
+.pagination .page-link:hover {
+  background-color: var(--verde-claro);
+  border-color: var(--verde-acento);
+}
+/* Al final de tu CSS, añade esto */
+body, html {
+  background: var(--Marron-clarito) !important;
+}
+header, footer {
+
+  color: var(--verde-oscuro)!important;
+ 
+}
+/* MEDIAQUERIE RESPONSIVE_____________/
+
 /* Tablets (≥ 768px) */
 @media (max-width: 768px) {
   .intercambio-encabezado {
