@@ -125,7 +125,7 @@ header {
   transition: all 0.3s ease;
 }
 
-.header-menu>li:last-child {
+.header-menu > li:last-child {
   position: relative;
 }
 
@@ -155,7 +155,7 @@ header {
   /*display: block; <- clave */
 }
 
-.header-menu>li:last-child:hover .header-submenu {
+.header-menu > li:last-child:hover .header-submenu {
   display: block;
 }
 
@@ -387,7 +387,7 @@ header {
 }
 
 /* Mostrar el elemento cuando se clikeo el falso boton---------------------- */
-#aparecer-login:checked~.log-in-oculto {
+#aparecer-login:checked ~ .log-in-oculto {
   display: flex;
   justify-content: center;
   animation: fadeIn 0.5s;
@@ -404,7 +404,7 @@ header {
 }
 
 /* Cambiar el texto del botón cuando está abierto*/
-#aparecer-login:checked+.button-label::after {
+#aparecer-login:checked + .button-label::after {
   content: " Haz clic para ocultar";
 }
 
@@ -506,11 +506,11 @@ form {
 }
 
 /* Cuando el campo de contraseña está enfocado, invertir las opacidades */
-.password-container:focus-within~.goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within~.goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
 
@@ -551,13 +551,13 @@ form {
 }
 
 /* Cambio de estado cuando se enfoca el campo de contraseña */
-.password-container:focus-within~.goblin-container .goblin-ojos-abiertos,
-.password-container input:focus~.goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos,
+.password-container input:focus ~ .goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within~.goblin-container .goblin-ojos-cerrados,
-.password-container input:focus~.goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados,
+.password-container input:focus ~ .goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
 
@@ -873,7 +873,6 @@ main {
 
 /* Pantallas chicas: celulares */
 @media (max-width: 600px) {
-
   /* Para cambiar de menu al hamburguesa en celular*/
   .menu_hamburguesa_principal {
     display: flex;
@@ -898,7 +897,7 @@ main {
     background-color: var(--verde-acento);
   }
 
-  .nav>li {
+  .nav > li {
     width: 100%;
     flex-direction: column;
     text-align: center;
@@ -929,23 +928,29 @@ main {
   .p-container {
     border-radius: 19px 10px 120px 120px;
     margin: -20px 6px 0 6px;
-
   }
   .container-bienvenida {
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    width: 380px;
     height: auto;
     margin-top: 0;
+    margin-left: 3%;
     padding: 0;
     position: absolute;
     top: 0; /* ajusta según la altura del header */
   }
 
   .goblinlandingpage1 img {
-    width: 90vw;
-    margin-top: 20px;
+    width: 300px;
+    height: auto;
+    margin-top: -20px;
+    margin-left: 50%;
   }
-
+  .boton-comienza-ahora {
+    margin: 0 0 0 0;
+    transform: translateX(-50%);
+  }
   /* segunda parte banner sponsors */
   .BannerSponsors {
     height: 80px;
@@ -1001,7 +1006,7 @@ main {
 }
 
 /* Tablets (≥ 768px) */
-@media (min-width: 600px) and (max-width: 1000px)  {
+@media (min-width: 600px) and (max-width: 1000px) {
   .header-jefe-visible {
     height: 90px;
     font-size: 1.1rem;
