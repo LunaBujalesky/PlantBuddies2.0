@@ -894,9 +894,7 @@ main {
 
   .header-menu {
     display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
+    align-content: center;
     background-color: var(--verde-acento);
   }
 
@@ -911,32 +909,28 @@ main {
     display: flex;
     background-color: var(--verde-acento);
   }
-
   /* primera parte bienvenida*/
   .banner-title {
     margin-top: 0;
     border-radius: 0px 0px 116px 116px;
-    width: 100%;
-    height: 219PX;
+    width: auto;
+    height: 219px;
   }
-
   .banner-title H2 {
     text-align: center;
   }
-
   .text-content {
     margin: 16px 0 6px 0;
     padding: 10px 5px 6px 5px;
     text-align: center;
     width: 100%;
     height: 424px;
-
   }
-
   .p-container {
     border-radius: 19px 10px 120px 120px;
-  }
+    margin: -20px 6px 0 6px;
 
+  }
   .container-bienvenida {
     flex-direction: column;
     width: 100%;
@@ -944,9 +938,7 @@ main {
     margin-top: 0;
     padding: 0;
     position: absolute;
-    top: 0;
-    /* ajusta según la altura del header */
-
+    top: 0; /* ajusta según la altura del header */
   }
 
   .goblinlandingpage1 img {
@@ -971,11 +963,10 @@ main {
     height: 40px;
   }
 
-
-
   /* segunda parte como funciona */
   .comofunciona-container {
-    display: flex column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 2rem;
     justify-content: space-between;
@@ -991,10 +982,10 @@ main {
     width: 98vw;
     padding: 20px 5px;
   }
-
   /* tercera parte testimonios */
   .testimonios-container {
-    display: flex column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 2rem;
     border-radius: 8px;
