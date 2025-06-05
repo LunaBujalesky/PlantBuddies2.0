@@ -692,7 +692,7 @@ form {
 }
 
 .testimonios-container p {
-  padding: 0px 36px 60px 36px;
+  padding: 0px 36px 2px 36px;
   color: var(--Black);
 }
 
@@ -705,18 +705,7 @@ form {
 }
 
 /* User 1 ------------------*/
-.Usuario1 {
-  background-color: #365746;
-  margin-top: -300px;
-  border-radius: 30px 30px 0px 0px;
-  width: 300px;
-  height: 200px;
-  border-width: 3px;
-  border-color: #677e52;
-  border-style: solid;
-}
-
-.Usuario1:hover {
+.testimonios-container div:hover {
   transform: scale(1.05);
 }
 
@@ -729,14 +718,12 @@ form {
 .userfondo {
   background-color: var(--Marron-clarito);
   border-width: 3px;
-  border-color: #677e52;
-  border-style: solid;
+  border-top: 4px solid #677e52;
   border-radius: 0px 0px 30px 30px;
   margin-top: 66px;
   width: 300px;
   height: 200px;
   position: absolute;
-  /* Añadido */
   box-sizing: border-box;
 }
 
@@ -748,21 +735,6 @@ form {
   margin-top: -40px;
 }
 
-.Usuario2:hover {
-  transform: scale(1.05);
-}
-
-.Usuario2 {
-  background-color: #365746;
-  margin-top: -300px;
-  border-radius: 30px 30px 0px 0px;
-  width: 300px;
-  height: 200px;
-  border-width: 3px;
-  border-color: #677e52;
-  border-style: solid;
-}
-
 /* User 3------------------ */
 
 .Usuario3 img {
@@ -772,16 +744,12 @@ form {
   margin-top: -40px;
 }
 
-.Usuario3:hover {
-  transform: scale(1.05);
-}
-
-.Usuario3 {
+.Usuario3, .Usuario2, .Usuario1 {
   background-color: #365746;
   margin-top: -300px;
-  border-radius: 30px 30px 0px 0px;
+  border-radius: 30px;
   width: 300px;
-  height: 200px;
+  height: 266px;
   border-width: 3px;
   border-color: #677e52;
   border-style: solid;
@@ -946,9 +914,6 @@ main {
     width: 300px;
     height: auto;
   }
-  .boton-comienza-ahora {
- 
-  }
   .goblinlandingpage1 {
     width: 100%;
 margin-top: 40%;
@@ -1014,22 +979,33 @@ margin-top: 40%;
     font-size: 80%;
   }
   /* tercera parte testimonios */
-  .testimonios-title h2{
-  margin-bottom: 22rem;
-    text-align: center;
-  }
+ 
+    .userfondo {
+      width: 260px;
+    height: 200px;  
+    border-top: 4px solid #677e52;  
+    }
+    .Usuario1, .Usuario2, .Usuario3 {
+      width: 260px;
+      height: 265px;
+    border-radius: 30px ;
+    }
 
   .testimonios-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    width: auto;
+    height: fit-content;
+    padding: 0%;
+    font-size: 90%;
     border-radius: 8px;
     margin-top: 320px;
     justify-content: space-between;
     align-content: stretch;
     min-height: 65vh; /* o la altura necesaria */
     overflow: visible;
+    margin-top: 90%;
   }
 
   /* footer mobile */
@@ -1038,11 +1014,43 @@ margin-top: 40%;
   }
 }
 
-/* Tablets (≥ 768px) */
+/* Tablets --------------------------------------------------------) */
 @media (min-width: 600px) and (max-width: 1000px) {
+   /* Para cambiar de menu al hamburguesa en tablets*/
+   .menu_hamburguesa_principal {
+    display: flex;
+  }
+
+  .nav {
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .header-jefe-visible {
-    height: 90px;
-    font-size: 1.1rem;
+    justify-content: space-between;
+  }
+
+
+  .header-jefe-visible h1 {
+    font-size: 36px;
+  }
+
+  .header-menu {
+    display: none;
+    align-content: center;
+    background-color: var(--verde-acento);
+  }
+
+  .nav > li {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    margin: 15px 0;
+  }
+
+  .header-menu .show {
+    display: flex;
+    background-color: var(--verde-acento);
   }
 
   .BannerSponsors {
@@ -1084,12 +1092,29 @@ margin-top: 40%;
     width: 90vw;
     padding: 40px 20px;
   }
-
-  .pie-de-pagina {
-    margin-top: auto;
-  }
+.testimonios-container {
+width: auto;
+height: fit-content;
+padding: 0%;
 }
+.userfondo {
+  width: 260px;
+height: 200px;  
+border-top: 4px solid #677e52;
 
+}
+.Usuario1, .Usuario2, .Usuario3 {
+  width: 260px;
+  height: 265px;
+border-radius: 30px ;
+
+}
+.testimonios-container p {
+font-size: 80%;
+}
+.pie-de-pagina {
+  margin-top: auto;
+}
 /* Desktops grandes (≥ 1200px) */
 @media (min-width: 1200px) {
   .header-jefe-visible {
