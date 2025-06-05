@@ -69,10 +69,10 @@ const enlaces = document.getElementById("nav-links");
 if (hamburguesa) console.log("Menu hamburguesa encontrado");
 else console.log("Menu hamburguesa no encontrado");
 
-hamburguesa.addEventListener ('click'), () => {
+hamburguesa.addEventListener ('click', () => {
   enlaces.classList.toggle('show');
   hamburguesa.classList.toggle('active');
   console.log("Menu hamburguesa activado");
-};
+});
 
 console.log("Script cargado correctamente");
