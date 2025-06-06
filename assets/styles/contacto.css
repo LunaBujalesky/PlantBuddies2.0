@@ -58,8 +58,11 @@
   color: var(--Marron-clarito);
   justify-self: left;
   align-self: center;
-}
 
+}
+.encabezado-contacto h2 {
+  font-weight: lighter;
+}
 .formulario {
   width:  1000px;
   height: 493px;
