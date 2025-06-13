@@ -11,8 +11,8 @@
   <link rel="shortcut icon" href="assets/FAVICON.png">
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles/registro.css" />
-  <link rel="stylesheet" href="assets/styles/index.css" />
+  <link rel="stylesheet" href="styles/registro.css"/>
+  <link rel="stylesheet" href="styles/index.css"/>
 </head>
 
 <body>
@@ -27,12 +27,12 @@
       <nav>
         <ul class="header-menu">
           <li class="header-menu-item"><a href="index.html">Inicio</a></li>
-          <li class="header-menu-item"><a href="registro.html">Registro</a></li>
-          <li class="header-menu-item"><a href="intercambios.html">Intercambios</a></li>
-          <li class="header-menu-item"><a href="comunidad.html">Comunidad</a></li>
-          <li class="header-menu-item"><a href="contacto.html">Contacto</a></li>
+          <li class="header-menu-item"><a href="pages/registro.html">Registro</a></li>
+          <li class="header-menu-item"><a href="pages/intercambios.html">Intercambios</a></li>
+          <li class="header-menu-item"><a href="pages/comunidad.html">Comunidad</a></li>
+          <li class="header-menu-item"><a href="pages/contacto.html">Contacto</a></li>
           <li class="header-menu-item">
-            <a href=".pages/perfil.html">
+            <a href="pages/perfil.html">
               <img src="assets/imagenes/AvatarBaseUsuario.png" alt="AvatarBaseUsuario" />
             </a>
 
@@ -71,69 +71,70 @@
   </header>
   <!-- FINencabezadodelaweb ---------------------------------------------------------------------------------------------------------------------------->
   <!--hijo 2 color claro, enlaces de submenu-->
-  <section>
-    <div class="registra-tu-planta">
-      <h3>Registra tu planta</h3>
-      <img src="assets/imagenes/PotatoIcon.png" alt="IconoPapa">
-    </div>
+  <main>
+    <section>
+      <div class="registra-tu-planta">
+        <h3>Registra tu planta</h3>
+        <img src="assets/imagenes/PotatoIcon.png" alt="IconoPapa">
+      </div>
 
-    <!--Registra contenedor-->
-    <div class="registra-abuelo">
+      <!--Registra contenedor-->
+      <div class="registra-abuelo">
 
-      <!--Registra hijo 1 formulario-->
-      <div class="formulario-plantas">
-        <form>
-          <div class="titulo-container">
-            <div class="Titulo">
-              <p>Título</p>
+        <!--Registra hijo 1 formulario-->
+        <div class="formulario-plantas">
+          <form>
+            <div class="titulo-container">
+              <div class="Titulo">
+                <p>Título</p>
+              </div>
+              <input type="Titulo"
+                placeholder="Dale un nombre atractivo a tu publicación que haga que otras personas se fijen en él."
+                class="input-Titulo">
             </div>
-            <input type="Titulo"
-              placeholder="Dale un nombre atractivo a tu publicación que haga que otras personas se fijen en él."
-              class="input-Titulo">
-          </div>
-          <div class="Especie-container">
-            <div class="Especie">
-              <p>Especie</p>
+            <div class="Especie-container">
+              <div class="Especie">
+                <p>Especie</p>
+              </div>
+              <input type="Especie" placeholder="Escribe su nombre científico y su nombre común." class="input-Especie">
             </div>
-            <input type="Especie" placeholder="Escribe su nombre científico y su nombre común." class="input-Especie">
-          </div>
-          <div class="Categorías-container">
-            <div class="Categorías">
-              <p>Categorías</p>
-            </div>
-            <input type="Categorías" placeholder=" Introduce palabras clave para que
+            <div class="Categorías-container">
+              <div class="Categorías">
+                <p>Categorías</p>
+              </div>
+              <input type="Categorías" placeholder=" Introduce palabras clave para que
       sea ubicada en el buscador como #suculenta" class="input-Categorías">
-          </div>
-          <div class="Descripción-container">
-            <div class="Descripción">
-              <p>Descripción</p>
             </div>
-            <input type="Descripción" placeholder="Cuéntale a otras personas porqué 
+            <div class="Descripción-container">
+              <div class="Descripción">
+                <p>Descripción</p>
+              </div>
+              <input type="Descripción" placeholder="Cuéntale a otras personas porqué 
       deberían enamorarse de tu propuesta.
       Incluye detalles que deberían saber antes
       de ofertar, dimensiones, estado, edad." class="input-Descripción">
+            </div>
+            <button class="boton-registro1">Dar en adopción</button>
+          </form>
+        </div>
+
+        <!--Registra hijo 2 imagenes-->
+        <div class="sube-fotos-oferta">
+          <div class="bigphoto">
+            <img src="assets/imagenes/Group21.jpg" alt="placeholder">
           </div>
-          <button class="boton-registro1">Dar en adopción</button>
-        </form>
-      </div>
-
-      <!--Registra hijo 2 imagenes-->
-      <div class="sube-fotos-oferta">
-        <div class="bigphoto">
-          <img src="assets/imagenes/Group21.jpg" alt="placeholder">
+          <div class="littleones">
+            <img src="assets/imagenes/Group67.jpg" alt="placeholder">
+            <img src="assets/imagenes/Group67.jpg" alt="placeholder">
+            <img src="assets/imagenes/Group67.jpg" alt="placeholder">
+          </div>
+          <button class="boton-registro2">Cargar fotos</button>
         </div>
-        <div class="littleones">
-          <img src="assets/imagenes/Group67.jpg" alt="placeholder">
-          <img src="assets/imagenes/Group67.jpg" alt="placeholder">
-          <img src="assets/imagenes/Group67.jpg" alt="placeholder">
-        </div>
-        <button class="boton-registro2">Cargar fotos</button>
       </div>
-    </div>
-    <img class="ranaSaltando" src="assets/imagenes/rana2.png" alt="ranaSaltando">
-    <img class="ranaSaltando2" src="assets/imagenes/rana1.png" alt="ranaSaltando">
-  </section>
-
+      <img class="ranaSaltando" src="assets/imagenes/rana2.png" alt="ranaSaltando">
+      <img class="ranaSaltando2" src="assets/imagenes/rana1.png" alt="ranaSaltando">
+    </section>
+  </main>
 
   <!-- footer, fin de la primera pagina index-->
   <footer class="pie-de-pagina">
