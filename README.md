@@ -4,7 +4,7 @@ se activa o desactiva con el "display: none", "display: flex"._
 const hamburguesa =document.querySelector (#hamburguesa);
 const enlaces = document.querySelector (#nav-links);
 
-hamburguesa.addEventListener('click', () => {
+hamburguesa.addEventListener ('click', () => {
   enlaces.classList.toggle('show');
   hamburguesa.classList.toggle('active');
 }

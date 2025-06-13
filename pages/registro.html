@@ -6,13 +6,13 @@
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlantBuddies</title>
-  <link rel="shortcut icon" href="assets/FAVICON.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="assets/FAVICON.png">
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/registro.css" />
   <link rel="stylesheet" href="assets/styles/index.css" />
-  <link rel="stylesheet" href="assets/styles/comunidad.css" />
 </head>
 
 <body>
@@ -32,13 +32,13 @@
           <li class="header-menu-item"><a href="comunidad.html">Comunidad</a></li>
           <li class="header-menu-item"><a href="contacto.html">Contacto</a></li>
           <li class="header-menu-item">
-            <a href="perfil.html">
+            <a href=".pages/perfil.html">
               <img src="assets/imagenes/AvatarBaseUsuario.png" alt="AvatarBaseUsuario" />
             </a>
 
             <div class="header-submenu">
               <div class="submenu-usuario-online"> <!--hijo 1 color oscuro, icono avarar, nombre perfil-->
-                <img src="/PlantBuddies/assets/imagenes/AvatarBaseUsuario.png" alt="">
+                <img src="assets/imagenes/AvatarBaseUsuario.png" alt="">
                 <h3>"Name"</h3>
                 <div class="stars">★ ★ ★ ★ ★</div>
               </div>
@@ -70,33 +70,72 @@
 
   </header>
   <!-- FINencabezadodelaweb ---------------------------------------------------------------------------------------------------------------------------->
-  <main>
-    <!-- encabezado comunidad--------------------------->
-    <section>
-      <div class="encabezado-comunidad">
-        <h2>Actividad de la Comunidad</h2>
-        <p>Este espacio es para crecer juntxs, como un buen micelio.
-          Subí tu guía arcana de cómo hablarle a tu ficus por las mañanas, recetas para aprovechar las plantas de tu
-          huerta, entérate de los últimos susurros
-          que recorren el bosque, comparte tus pocimas y consejos. Aqui nadie juzga (salvo el helecho viejo, pero ese
-          gruñe por costumbre, no le des bola). Si sos nuevx, dejá un croar de saludo. Si ya sos de la madriguera,
-          ¡aparecé y revolvé el caldero!
-          🌻 La comunidad se riega con palabras, así que ¡Animate a participar y hacer florecer esta comunidad!🌻</p>
-        <button class="ideas">Empieza a compartir tus ideas</button>
+  <!--hijo 2 color claro, enlaces de submenu-->
+  <section>
+    <div class="registra-tu-planta">
+      <h3>Registra tu planta</h3>
+      <img src="assets/imagenes/PotatoIcon.png" alt="IconoPapa">
+    </div>
+
+    <!--Registra contenedor-->
+    <div class="registra-abuelo">
+
+      <!--Registra hijo 1 formulario-->
+      <div class="formulario-plantas">
+        <form>
+          <div class="titulo-container">
+            <div class="Titulo">
+              <p>Título</p>
+            </div>
+            <input type="Titulo"
+              placeholder="Dale un nombre atractivo a tu publicación que haga que otras personas se fijen en él."
+              class="input-Titulo">
+          </div>
+          <div class="Especie-container">
+            <div class="Especie">
+              <p>Especie</p>
+            </div>
+            <input type="Especie" placeholder="Escribe su nombre científico y su nombre común." class="input-Especie">
+          </div>
+          <div class="Categorías-container">
+            <div class="Categorías">
+              <p>Categorías</p>
+            </div>
+            <input type="Categorías" placeholder=" Introduce palabras clave para que
+      sea ubicada en el buscador como #suculenta" class="input-Categorías">
+          </div>
+          <div class="Descripción-container">
+            <div class="Descripción">
+              <p>Descripción</p>
+            </div>
+            <input type="Descripción" placeholder="Cuéntale a otras personas porqué 
+      deberían enamorarse de tu propuesta.
+      Incluye detalles que deberían saber antes
+      de ofertar, dimensiones, estado, edad." class="input-Descripción">
+          </div>
+          <button class="boton-registro1">Dar en adopción</button>
+        </form>
       </div>
-    </section>
-    <!-- FIN encabezado comunidad--------------------------->
+
+      <!--Registra hijo 2 imagenes-->
+      <div class="sube-fotos-oferta">
+        <div class="bigphoto">
+          <img src="assets/imagenes/Group21.jpg" alt="placeholder">
+        </div>
+        <div class="littleones">
+          <img src="assets/imagenes/Group67.jpg" alt="placeholder">
+          <img src="assets/imagenes/Group67.jpg" alt="placeholder">
+          <img src="assets/imagenes/Group67.jpg" alt="placeholder">
+        </div>
+        <button class="boton-registro2">Cargar fotos</button>
+      </div>
+    </div>
+    <img class="ranaSaltando" src="assets/imagenes/rana2.png" alt="ranaSaltando">
+    <img class="ranaSaltando2" src="assets/imagenes/rana1.png" alt="ranaSaltando">
+  </section>
 
 
-    <!-- Grid comunidad--------------------------->
-    <section>
-
-    </section>
-
-    <!-- FIN Grid comunidad--------------------------->
-  </main>
-
-  <!-- footer-->
+  <!-- footer, fin de la primera pagina index-->
   <footer class="pie-de-pagina">
     <div class="footerMenu"> <!-- DIV PADRE-->
       <div class="descripcionPagina">
@@ -110,12 +149,12 @@
       <div class="Enlaces">
         <h3>Enlaces</h3>
         <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="registro.html">Registro</a></li>
-          <li><a href="intercambios.html">Intercambios</a></li>
-          <li><a href="comunidad.html">Comunidad</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href=".pages/index.html">Inicio</a></li>
+          <li><a href=".pages/registro.html">Registro</a></li>
+          <li><a href=".pages/intercambios.html">Intercambios</a></li>
+          <li><a href=".pages/comunidad.html">Comunidad</a></li>
+          <li><a href=".pages/contacto.html">Contacto</a></li>
+          <li><a href=".pages/perfil.html">Perfil</a></li>
           <ul>
       </div>
 
