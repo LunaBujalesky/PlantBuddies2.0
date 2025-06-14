@@ -104,7 +104,6 @@ header {
 .header-menu {
   display: flex;
   gap: 2rem;
-  /*align-items: center;*/
   list-style: none;
   margin: 0;
   padding: 0;
@@ -125,7 +124,7 @@ header {
   transition: all 0.3s ease;
 }
 
-.header-menu > li:last-child {
+.header-menu>li:last-child {
   position: relative;
 }
 
@@ -155,7 +154,7 @@ header {
   /*display: block; <- clave */
 }
 
-.header-menu > li:last-child:hover .header-submenu {
+.header-menu>li:last-child:hover .header-submenu {
   display: block;
 }
 
@@ -167,8 +166,6 @@ header {
   border-radius: 1172px 0px 0px 0px;
   background-color: var(--Black);
   padding-left: 50px;
-
-  /*overflow: hidden;*/
 }
 
 .submenu-usuario-online img {
@@ -387,7 +384,7 @@ header {
 }
 
 /* Mostrar el elemento cuando se clikeo el falso boton---------------------- */
-#aparecer-login:checked ~ .log-in-oculto {
+#aparecer-login:checked~.log-in-oculto {
   display: flex;
   justify-content: center;
   animation: fadeIn 0.5s;
@@ -404,7 +401,7 @@ header {
 }
 
 /* Cambiar el texto del botón cuando está abierto*/
-#aparecer-login:checked + .button-label::after {
+#aparecer-login:checked+.button-label::after {
   content: " Haz clic para ocultar";
 }
 
@@ -506,11 +503,11 @@ form {
 }
 
 /* Cuando el campo de contraseña está enfocado, invertir las opacidades */
-.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within~.goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within~.goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
 
@@ -551,13 +548,13 @@ form {
 }
 
 /* Cambio de estado cuando se enfoca el campo de contraseña */
-.password-container:focus-within ~ .goblin-container .goblin-ojos-abiertos,
-.password-container input:focus ~ .goblin-container .goblin-ojos-abiertos {
+.password-container:focus-within~.goblin-container .goblin-ojos-abiertos,
+.password-container input:focus~.goblin-container .goblin-ojos-abiertos {
   opacity: 0;
 }
 
-.password-container:focus-within ~ .goblin-container .goblin-ojos-cerrados,
-.password-container input:focus ~ .goblin-container .goblin-ojos-cerrados {
+.password-container:focus-within~.goblin-container .goblin-ojos-cerrados,
+.password-container input:focus~.goblin-container .goblin-ojos-cerrados {
   opacity: 1;
 }
 
@@ -584,24 +581,10 @@ form {
   align-items: center;
 }
 
-.sponsorIngenias img {
+.supporters-logos img {
   width: 100px;
   height: 100px;
   margin: auto;
-}
-
-.sponsorIngeniasoft:hover {
-  transform: scale(1.1);
-}
-
-.sponsorlogo2 img {
-  width: 100px;
-  height: 100px;
-}
-
-.sponsorlogo3 img {
-  width: 100px;
-  height: 100px;
 }
 
 /* Sección como funciona------------------------------------------------------------------------------------------------------------------------------*/
@@ -678,8 +661,7 @@ form {
 .testimonios {
   font-family: var(--fuente2);
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 180px;
+  margin: 100px  0  180px 0;
 }
 
 .testimonios-container {
@@ -704,17 +686,7 @@ form {
   color: var(--Black);
 }
 
-/* User 1 ------------------*/
-.testimonios-container div:hover {
-  transform: scale(1.05);
-}
-
-.Usuario1 img {
-  margin-top: -40px;
-  width: 80px;
-  height: auto;
-}
-
+/* Users cards ------------------*/
 .userfondo {
   background-color: var(--Marron-clarito);
   border-width: 3px;
@@ -727,26 +699,7 @@ form {
   box-sizing: border-box;
 }
 
-/* User 2----------------- */
-.Usuario2 img {
-  width: 80px;
-  height: auto;
-  margin: auto;
-  margin-top: -40px;
-}
-
-/* User 3------------------ */
-
-.Usuario3 img {
-  width: 80px;
-  height: auto;
-  margin: auto;
-  margin-top: -40px;
-}
-
-.Usuario3,
-.Usuario2,
-.Usuario1 {
+.Usuario {
   background-color: #365746;
   margin-top: -300px;
   border-radius: 30px;
@@ -755,6 +708,16 @@ form {
   border-width: 3px;
   border-color: #677e52;
   border-style: solid;
+}
+
+.Usuario img {
+  margin-top: -40px;
+  width: 80px;
+  height: auto;
+}
+
+.Usuario:hover {
+  transform: scale(1.05);
 }
 
 /* footer-------------------------------------------------------------------------------------------------------------------------------*/
@@ -843,6 +806,7 @@ main {
 
 /* Pantallas chicas: celulares */
 @media (max-width: 600px) {
+
   /* Para cambiar de menu al hamburguesa en celular*/
   .menu_hamburguesa_principal {
     display: flex;
@@ -867,7 +831,7 @@ main {
     background-color: var(--verde-acento);
   }
 
-  .nav > li {
+  .nav>li {
     width: 100%;
     flex-direction: column;
     text-align: center;
@@ -965,18 +929,26 @@ main {
     font-size: 0.9rem;
     padding: 8px 0;
     margin-top: 180%;
-    clip-path: polygon(
-      0% 0%,
-      /*  esquina superior izquierda. */ 0% 0%,
-      /*   inicio del corte en V*/ 50% 12%,
-      /*  fondo del corte en V  punto más bajo del recorte */ 100% 0%,
-      /*  fin del corte en V    */ 100% 30%,
-      /*esquina superior derecha  */ 100% 100%,
-      /* esquina inferior derecha */ 50% 90%,
-      /*  corte inferior */ 0% 100% /* esquina inferior izquierda*/
-    );
+    clip-path: polygon(0% 0%,
+        /*  esquina superior izquierda. */
+        0% 0%,
+        /*   inicio del corte en V*/
+        50% 12%,
+        /*  fondo del corte en V  punto más bajo del recorte */
+        100% 0%,
+        /*  fin del corte en V    */
+        100% 30%,
+        /*esquina superior derecha  */
+        100% 100%,
+        /* esquina inferior derecha */
+        50% 90%,
+        /*  corte inferior */
+        0% 100%
+        /* esquina inferior izquierda*/
+      );
     box-shadow: 5px 5px 15px var --Black (0, 0, 0, 0.8),
-      /* sombra abajo derecha */ 0px -5px 10px var --Black (0, 0, 0, 0.8);
+      /* sombra abajo derecha */
+      0px -5px 10px var --Black (0, 0, 0, 0.8);
     /* sombra arriba */
   }
 
@@ -1029,9 +1001,8 @@ main {
     border-top: 4px solid #677e52;
   }
 
-  .Usuario1,
-  .Usuario2,
-  .Usuario3 {
+
+  .Usuario {
     width: 260px;
     height: 265px;
     border-radius: 30px;
@@ -1063,26 +1034,31 @@ main {
 
 /* Tablets --------------------------------------------------------) */
 @media (min-width: 600px) and (max-width: 1000px) {
+
   /* Para cambiar de menu al hamburguesa en tablets*/
   .menu_hamburguesa_principal {
     display: flex;
   }
+
   .bar {
     width: 30px;
     height: 4px;
     background-color: var(--Black);
     margin: 5px 0;
   }
+
   .menu_hamburguesa_item {
     font-family: var(--fuente2);
     color: var(--falso-blanco);
   }
+
   .menu-hamburguesa-fondo .active {
     display: none;
     background-color: var(--Black);
     width: 50px;
     height: 100px;
   }
+
   .nav {
     justify-content: space-between;
     width: 100%;
@@ -1102,7 +1078,7 @@ main {
     background-color: var(--verde-acento);
   }
 
-  .nav > li {
+  .nav>li {
     width: 100%;
     flex-direction: column;
     text-align: center;
@@ -1166,9 +1142,7 @@ main {
     border-top: 4px solid #677e52;
   }
 
-  .Usuario1,
-  .Usuario2,
-  .Usuario3 {
+  .Usuario {
     width: 260px;
     height: 265px;
     border-radius: 30px;
@@ -1213,4 +1187,3 @@ main {
 .ocultar {
   display: none;
 }
-
