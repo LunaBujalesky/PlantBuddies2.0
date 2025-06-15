@@ -106,23 +106,5 @@ console.log(titulo.classList);
 
 
 
-hamburguesa.addEventListener ('click', DimeAlgoLindo());
-function DimeAlgoLindo() {
-  const frases = [
-    "Eres una persona increíble.",
-    "Tu sonrisa ilumina el día.",
-    "Tienes un corazón de oro.",
-    "Eres único y especial.",
-    "Tu bondad inspira a los demás.",
-    "Eres capaz de lograr grandes cosas.",
-    "Tu risa es contagiosa.",
-    "Eres un regalo para el mundo.",
-    "Tu creatividad no tiene límites.",
-    "Eres amado y valorado."
-  ];
-  
-  const randomIndex = Math.floor(Math.random() * frases.length);
-  return frases[randomIndex];
-}
 
   

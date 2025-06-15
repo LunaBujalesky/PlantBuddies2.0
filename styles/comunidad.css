@@ -1,18 +1,18 @@
-
 :root {
-    --fuente1: "VT323", monospace;
-    --fuente2: "tagesschrift";
-  }
-  :root {
-    --Black: #473f34;
-    --color-fondo: #f6e8b1;
-    --verde-lima: #b7ca79;
-    --verde-oscuro: #677e52;
-    --verde-acento: #b3b792;
-    --Marron-oscuro: #1c3d19;
-    --Marron-intermedio: #cfbb99;
-    --Marron-clarito: #e5d7c4;
-  }
+  --fuente1: "VT323", monospace;
+  --fuente2: "tagesschrift";
+}
+:root {
+  --Black: #473f34;
+  --color-fondo: #f6e8b1;
+  --verde-lima: #b7ca79;
+  --verde-oscuro: #677e52;
+  --verde-acento: #b3b792;
+  --Marron-oscuro: #1c3d19;
+  --Marron-intermedio: #cfbb99;
+  --Marron-clarito: #e5d7c4;
+  --verde-triada: #8c9657;
+}
 /* Estilos generales */
 body {
   margin: 0;
@@ -25,47 +25,118 @@ body {
 /* encabezado comunidad */
 .encabezado-comunidad {
   width: 100%;
-height: 300px;
-background-color: var(--verde-oscuro);
-font-family: var(--fuente2);
-color: var(--Marron-clarito);
- margin-top: 0;
-  padding-top: 0; 
+  height: 300px;
+  background-color: var(--Black);
+  font-family: var(--fuente2);
+  color: var(--Marron-clarito);
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.encabezado-comunidad h2{
+.encabezado-comunidad h2 {
   font-weight: normal;
-margin-top: 0px;
-text-align: left;
-padding: 64px 200px 0px 240px;
+  margin-top: 0px;
+  text-align: left;
+  padding: 64px 200px 0px 240px;
 }
-.encabezado-comunidad  p{
+.encabezado-comunidad p {
   font-weight: normal;
-margin-top: 0px;
-text-align: left;
-padding: 10px 600px 0px 240px;
+  margin-top: 0px;
+  text-align: left;
+  padding: 10px 600px 0px 240px;
 }
 
-
-.ideas  {
-  background-color: var(--verde-lima);
+.ideas {
+  background-color: var(--Marron-clarito);
   border-width: 1px;
-  border-color: #365746;
-  border-style: solid;
   padding: 1rem 2rem;
   font-size: medium;
   font-family: var(--fuente2);
-  color: var(--Marron-oscuro);
+  color: var(--Black);
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 20px;
   width: auto;
   display: inline-block;
   transition: all 0.3s ease;
-margin-left: 1460px;
-margin-top: 8px;
+  margin-left: 1460px;
+  margin-top: 8px;
   position: absolute;
   text-align: center;
 }
+/* grid comunidad */
+.comunidad-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+/* foros comunidad */
+.foros-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--falso-blanco);
+  width: 50%;
+  height: 1151px;
+  border-radius: 8px;
+  font-family: var(--fuente2);
+  color: var(--Black);
+}
+/* categorias populares comunidad */
+.categorias-populares-container {
+  color: var(--Marron-clarito);
+  font-family: var(--fuente2);
+  width: 80%;
+  height: 1151px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 5 columnas de igual tamaño */
+  grid-template-rows: repeat(2, auto); /* 3 filas que se ajustan al contenido */
+  row-gap: 50px;
+  column-gap: 8px;
+  align-items: center; /* eje vertical de las celdas */
+  justify-items: center;/* contenido dentro de las celdas */
+  margin: 0 auto; /* centra el grid dentro del contenedor padre */
+}
+.categoria {
+  background-color: var(--verde-triada);
+  width: 325px;
+  height: 157px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+}
+.categoria img {
+  width: 100px;
+  height: auto;
+  margin: auto;
+  opacity: 80%;
+border-radius: 5px;
+}
+.categoria {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.categoria:hover {
+  transform: scale(1.05);
+  z-index: 5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* publicaciones foro comunidad */
+.actividad-reciente-container {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fuente2);
+  color: var(--Black);
+}
+.divisiones-publicaciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* sidebars comunidad */
+
 /* Mobile (≤ 600px) */
 @media (max-width: 600px) {
   .comunidad-container {
@@ -74,12 +145,12 @@ margin-top: 8px;
     width: 100%;
     margin-top: auto;
   }
-    .comunidad-titulo {
+  .comunidad-titulo {
     font-size: 24px;
     margin: 8px 0;
     text-align: center;
   }
-.ideas {
+  .ideas {
     position: static;
     margin: 20px auto;
     display: block;
@@ -87,23 +158,23 @@ margin-top: 8px;
     max-width: 200px;
     font-size: 16px;
     padding: 0.8rem 1.5rem;
-    margin-left: 250px
+    margin-left: 250px;
   }
-    .encabezado-comunidad {
+  .encabezado-comunidad {
     height: auto;
     min-height: 250px;
-       margin-top: 0;
+    margin-top: 0;
     padding-top: 0%;
   }
-    .encabezado-comunidad h2 {
+  .encabezado-comunidad h2 {
     margin: 0;
     padding: 20px;
     text-align: center;
   }
-.encabezado-comunidad p {
- padding: 10px 20px;
+  .encabezado-comunidad p {
+    padding: 10px 20px;
     text-align: center;
-     width: 90%;
+    width: 90%;
     max-width: 500px;
   }
   .pie-de-pagina {
@@ -128,7 +199,7 @@ margin-top: 8px;
     margin: 15px;
     font-size: 18px;
   }
-    .encabezado-comunidad {
+  .encabezado-comunidad {
     height: auto;
     min-height: 280px;
     margin-top: 0;
@@ -139,15 +210,15 @@ margin-top: 8px;
     margin: 0;
     padding: 30px 20px 10px;
   }
-.encabezado-comunidad p {
+  .encabezado-comunidad p {
     padding: 0px;
     text-align: center;
     margin-left: 10px;
     margin-top: 0px;
   }
 
-.ideas {
-    margin-left: 250px
+  .ideas {
+    margin-left: 250px;
   }
   .pie-de-pagina {
     margin-top: auto;

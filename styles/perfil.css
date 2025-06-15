@@ -37,8 +37,13 @@
   width: 100%;
   height: auto;
 }
+ /* Estilos para el botón con efecto de línea */
+ .perfil-boton-efecto-linea {
+  position: relative;
+  display: inline-block;
+}
 
-.perfil-boton-efecto-linea:after:hover {
+.perfil-boton-efecto-linea::after {
   content: '';
   position: absolute;
   left: 0;
@@ -50,6 +55,9 @@
   border-radius: 2px;
 }
 
+.perfil-boton-efecto-linea:hover::after {
+  width: 100%;
+}
 .boton-registro1 {
   background-color: transparent;
   border-style: none;
@@ -61,6 +69,7 @@
   font-weight: bold;
   width: auto;
   text-align: center;
+  text-decoration: none;
 }
 .boton-registro1:hover {
   color: var(--Black);
