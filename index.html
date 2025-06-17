@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./css/index.css" />
 </head>
 
 <body>
@@ -32,27 +32,27 @@
         <span class="bar"></span>
         <span class="bar"></span>
         <nav class="menu-hamburguesa-fondo">
-          <ul>
-            <li class="menu-hamburguesa-item"><a href="../index.html">Inicio</a></li>
-            <li class="menu-hamburguesa-item"><a href="pages/registro.html">Registro</a></li>
-            <li class="menu-hamburguesa-item"><a href="pages/intercambios.html">Intercambios</a></li>
-            <li class="menu-hamburguesa-item"><a href="pages/comunidad.html">Comunidad</a></li>
-            <li class="menu-hamburguesa-item"><a href="pages/contacto.html">Contacto</a></li>
-            <li class="menu-hamburguesa-item">
-              <a href="pages/perfil.html"></a>
+          <div class="submenu-container" id="submenu">
+            <div class="hover-background" id="hoverBg"></div>
+            <div class="menu-item" data-index="0"><a href="index.html"></a>Inicio</div>
+            <div class="menu-item active" data-index="1"><a href="pages/registro.html"></a>Registro</div>
+            <div class="menu-item" data-index="2"><a href="pages/intercambios.html"></a>Intercambios</div>
+            <div class="menu-item" data-index="3"><a href=".pages/comunidad.html"></a>Comunidad</div>
+            <div class="menu-item" data-index="4"><a href=".pages/contacto.html"></a>Contacto</div>
+          </div>
 
-              <div class="menu-hamburguesa-submenu">
-                <div class="menu-hamburguesa-submenu-enlaces"><!--hijo 2 color claro, enlaces de submenu-->
-                  <ul>
-                    <li> <a href="pages/perfil.html">Perfil</a></li>
-                    <li> <a href="/pages/comunidad.html">Favoritos</a></li>
-                    <li><a href="pages/social.html">Social</a></li>
-                    <li> <a href="pages/misintercambios.html">Mis intercambios</a> </li>
-                    <li> <a href="pages/offline">Cerrar sesión</a> </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
+          <div class="menu-hamburguesa-submenu">
+            <div class="menu-hamburguesa-submenu-enlaces"><!--hijo 2 color claro, enlaces de submenu-->
+              <ul>
+                <li> <a href="pages/perfil.html">Perfil</a></li>
+                <li> <a href="/pages/comunidad.html">Favoritos</a></li>
+                <li><a href="pages/social.html">Social</a></li>
+                <li> <a href="pages/misintercambios.html">Mis intercambios</a> </li>
+                <li> <a href="pages/offline">Cerrar sesión</a> </li>
+              </ul>
+            </div>
+          </div>
+          </li>
           </ul>
 
         </nav>
@@ -325,6 +325,75 @@
     <p id="copyright">©2025 hecho con ❤ por el equipo de PlantBuddies. Todos los derechos reservados</p>
   </footer>
 </body>
-<script src="index.js"></script>
+<script>
+  const submenu = document.getElementById('submenu');
+  const hoverBg = document.getElementById('hoverBg');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  let currentActive = 1; // Registro está activo por defecto
+  let isHovering = false;
+
+  // Posicionar el hover background en el elemento activo inicialmente
+  function setInitialPosition() {
+    const activeItem = menuItems[currentActive];
+    hoverBg.style.transform = `translateY(${activeItem.offsetTop}px)`;
+    hoverBg.classList.add('active');
+  }
+
+  // Inicializar posición
+  setInitialPosition();
+
+  menuItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      isHovering = true;
+      hoverBg.style.transform = `translateY(${item.offsetTop}px)`;
+      hoverBg.classList.add('active');
+
+      // Remover clase active de todos los items y agregarla al hover actual
+      menuItems.forEach(mi => mi.classList.remove('active'));
+      item.classList.add('active');
+    });
+
+    item.addEventListener('click', () => {
+      currentActive = index;
+      // Mantener el item clickeado como activo
+      menuItems.forEach(mi => mi.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  submenu.addEventListener('mouseleave', () => {
+    isHovering = false;
+    // Volver al elemento activo seleccionado
+    const activeItem = menuItems[currentActive];
+    hoverBg.style.transform = `translateY(${activeItem.offsetTop}px)`;
+
+    // Restaurar la clase active al elemento seleccionado
+    menuItems.forEach(mi => mi.classList.remove('active'));
+    activeItem.classList.add('active');
+  });
+
+  // Ajustar posición si la ventana cambia de tamaño
+  window.addEventListener('resize', () => {
+    if (!isHovering) {
+      setInitialPosition();
+    }
+  });
+  const hamburguesa = document.getElementById('hamburguesa');
+const menuFondo = document.getElementById('menuFondo');
+
+hamburguesa.addEventListener('click', () => {
+    hamburguesa.classList.toggle('active');
+    menuFondo.classList.toggle('active');
+});
+
+// Cerrar al hacer clic en el fondo
+menuFondo.addEventListener('click', (e) => {
+    if (e.target === menuFondo) {
+        hamburguesa.classList.remove('active');
+        menuFondo.classList.remove('active');
+    }
+});
+</script>
 
 </html>
