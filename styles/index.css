@@ -94,12 +94,30 @@ header {
 .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--Black);
+  background-color: var(--verde-oscuro);
+  border-width: 3px;
+  border-color: var(--verde-triada);
+  border-radius: 3px;
   margin: 4px 0;
   font-family: var(--fuente2);
   color: var(--Marron-clarito);
   transition: 0.3s;
 }
+.bar:hover:first-child {
+  background-color: var(--verde-oscuro);
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+.bar:hover:nth-child {
+  opacity: 0;
+}
+
+.bar:hover:first-child {
+  background-color: var(--verde-oscuro);
+  border-radius: 3px;
+  transform: rotate(-45deg);
+}
+
 
 /*MENU EN COMPUTADORAS*/
 .header-menu {
@@ -172,6 +190,7 @@ header {
 .submenu-usuario-online img {
   width: 65px;
   height: 65px;
+  margin: 2rem 0 0 2rem;
 }
 
 .submenu-usuario-online h3 {
@@ -179,10 +198,12 @@ header {
   font-family: var(--fuente2);
   font-weight: normal;
   color: var(--beige);
+  margin: 2rem 0 0 2rem;
 }
 
 .submenu-usuario-online .stars {
   margin-top: 70px;
+  margin-left: -4rem;
   color: var(--beige);
 }
 
@@ -728,18 +749,18 @@ form {
   background-color: var(--Black);
   width: 100%;
   font-family: var(--fuente1);
-  color: var(--beige);
+  color: var(--falso-blanco);
   font-weight: none;
 }
 
 .descripcionPagina a h3 {
-  color: var(--beige);
+  color: var(--falso-blanco);
   margin: 0px 0px 0px 0px;
 }
 
 .descripcionPagina div {
   width: auto;
-  color: var(--beige);
+  color: var(--falso-blanco);
   max-width: 100px;
   margin-right: 20px;
   margin-top: 0px;
@@ -747,7 +768,7 @@ form {
 
 .descripcionPagina p {
   width: auto;
-  color: var(--beige);
+  color: var(--falso-blanco);
   text-align: left;
   max-width: 180px;
   padding: 10px;
@@ -771,12 +792,12 @@ form {
   margin: 0;
   padding: 0;
   text-align: left;
-  color: var(--beige);
+  color: var(--falso-blanco);
 }
 
 .footerMenu a {
   font-family: var(--fuente1);
-  color: var(--beige);
+  color: var(--falso-blanco);
   text-decoration: none;
   padding: 10px 15px;
 }
@@ -791,7 +812,7 @@ form {
 }
 
 #copyright {
-  color: var(--beige);
+  color: var(--falso-blanco);
   font-family: var(--fuente1);
   text-align: center;
   margin: auto;
@@ -1042,13 +1063,32 @@ main {
   }
 
   .bar {
-    width: 30px;
-    height: 4px;
-    background-color: var(--Black);
-    margin: 5px 0;
+    width: 25px;
+    height: 3px;
+    background-color: var(--verde-oscuro);
+    border-width: 3px;
+    border-color: var(--verde-triada);
+    border-radius: 3px;
+    margin: 4px 0;
+    font-family: var(--fuente2);
+    color: var(--Marron-clarito);
+    transition: 0.3s;
   }
-
-  .menu_hamburguesa_item {
+  .bar:hover:first-child {
+    background-color: var(--verde-oscuro);
+    border-radius: 3px;
+    transform: rotate(45deg);
+  }
+  .bar:hover:nth-child {
+    opacity: 0;
+  }
+  
+  .bar:hover:first-child {
+    background-color: var(--verde-oscuro);
+    border-radius: 3px;
+    transform: rotate(-45deg);
+  }
+    .menu_hamburguesa_item {
     font-family: var(--fuente2);
     color: var(--falso-blanco);
   }
@@ -1179,11 +1219,7 @@ main {
   }
 }
 
-.pepito {
-  color: red;
-  font-size: 20px;
-  font-weight: bold;
-}
+
 
 .ocultar {
   display: none;
