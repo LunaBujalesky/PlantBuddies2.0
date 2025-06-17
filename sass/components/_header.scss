@@ -13,8 +13,8 @@ header {
 }
 
 .header-jefe-visible {
+  @include flex;
   background-color: $verde-acento;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
@@ -33,7 +33,7 @@ header {
 }
 
 .logo-container {
-  display: flex;
+  @include flex;
   align-items: center;
   gap: 1rem;
 
@@ -50,7 +50,7 @@ header {
 /* Menú -----------------------------------------------------------------------------------------------------*/
 /* MENU EN COMPUTADORAS ----------------------------------------------------------------*/
 .header-menu {
-  display: flex;
+  @include flex;
   gap: 2rem;
   list-style: none;
   margin: 0;
@@ -230,7 +230,7 @@ header {
 
 /* Diseño hijo 1 color oscuro*/
 .submenu-usuario-online {
-  display: flex;
+  @include flex;
   height: 126px;
   width: 100%;
   border-radius: 1172px 0px 0px 0px;
@@ -261,10 +261,10 @@ header {
 /* Diseño hijo 2 color claro*/
 .submenu-enlaces {
   /* contenedor*/
+  @include flex;
   padding-left: 50px;
   background-color: #b3b792;
   width: 100%;
-  display: flex;
   flex-direction: column;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -276,8 +276,8 @@ header {
 }
 
 .submenu-enlaces li {
+  @include flex;
   padding: 12px 0px;
-  display: flex;
   border-bottom: 1px solid #eee;
   align-items: center;
 }

@@ -107,4 +107,73 @@ console.log(titulo.classList);
 
 
 
-  
+  /*
+  const submenu = document.getElementById('submenu');
+  const hoverBg = document.getElementById('hoverBg');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  let currentActive = 1; // Registro está activo por defecto
+  let isHovering = false;
+
+  // Posicionar el hover background en el elemento activo inicialmente
+  function setInitialPosition() {
+    const activeItem = menuItems[currentActive];
+    hoverBg.style.transform = `translateY(${activeItem.offsetTop}px)`;
+    hoverBg.classList.add('active');
+  }
+
+  // Inicializar posición
+  setInitialPosition();
+
+  menuItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      isHovering = true;
+      hoverBg.style.transform = `translateY(${item.offsetTop}px)`;
+      hoverBg.classList.add('active');
+
+      // Remover clase active de todos los items y agregarla al hover actual
+      menuItems.forEach(mi => mi.classList.remove('active'));
+      item.classList.add('active');
+    });
+
+    item.addEventListener('click', () => {
+      currentActive = index;
+      // Mantener el item clickeado como activo
+      menuItems.forEach(mi => mi.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  submenu.addEventListener('mouseleave', () => {
+    isHovering = false;
+    // Volver al elemento activo seleccionado
+    const activeItem = menuItems[currentActive];
+    hoverBg.style.transform = `translateY(${activeItem.offsetTop}px)`;
+
+    // Restaurar la clase active al elemento seleccionado
+    menuItems.forEach(mi => mi.classList.remove('active'));
+    activeItem.classList.add('active');
+  });
+
+  // Ajustar posición si la ventana cambia de tamaño
+  window.addEventListener('resize', () => {
+    if (!isHovering) {
+      setInitialPosition();
+    }
+  });
+  const hamburguesa = document.getElementById('hamburguesa');
+  const menuFondo = document.getElementById('menuFondo');
+
+  hamburguesa.addEventListener('click', () => {
+    hamburguesa.classList.toggle('active');
+    menuFondo.classList.toggle('active');
+  });
+
+  // Cerrar al hacer clic en el fondo
+  menuFondo.addEventListener('click', (e) => {
+    if (e.target === menuFondo) {
+      hamburguesa.classList.remove('active');
+      menuFondo.classList.remove('active');
+    }
+  });
+*/
