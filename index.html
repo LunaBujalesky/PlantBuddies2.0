@@ -42,7 +42,7 @@
             <div class="menu-item" data-index="4"><a href=".pages/contacto.html"></a>Contacto</div>
           </div>
 
-          <div class="menu-hamburguesa-submenu">
+          <div class="menu-hamburguesa-submenu" style="display: none;">
             <div class="menu-hamburguesa-submenu-enlaces"><!--hijo 2 color claro, enlaces de submenu-->
               <ul>
                 <li> <a href="pages/perfil.html">Perfil</a></li>
@@ -53,8 +53,7 @@
               </ul>
             </div>
           </div>
-          </li>
-          </ul>
+          
 
         </nav>
 
@@ -381,20 +380,20 @@
     }
   });
   const hamburguesa = document.getElementById('hamburguesa');
-const menuFondo = document.getElementById('menuFondo');
+  const menuFondo = document.getElementById('menuFondo');
 
-hamburguesa.addEventListener('click', () => {
+  hamburguesa.addEventListener('click', () => {
     hamburguesa.classList.toggle('active');
     menuFondo.classList.toggle('active');
-});
+  });
 
-// Cerrar al hacer clic en el fondo
-menuFondo.addEventListener('click', (e) => {
+  // Cerrar al hacer clic en el fondo
+  menuFondo.addEventListener('click', (e) => {
     if (e.target === menuFondo) {
-        hamburguesa.classList.remove('active');
-        menuFondo.classList.remove('active');
+      hamburguesa.classList.remove('active');
+      menuFondo.classList.remove('active');
     }
-});
+  });
 </script>
 
 </html>
