@@ -1,22 +1,358 @@
----
---- 
-
-.debug_para_githubpages {
-  /* Segun la documentación main.scss debe tener esas "---" al inicio pero 
-  me genera un error si justo debajo tiene los imports, pro eso esta clase.*/
+@charset "UTF-8";
+/* Queria usar esta pero no em dio tiempo
+@mixin flex($justify: center, $align: center) {
   display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: lighter;
 }
 
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'base/reset';
-@import 'components/header';   
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #030200;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
 
+/* Encabezado------------------------------------------------------------------------------------------------------- */
+header {
+  position: relative;
+}
+header h1 {
+  font-family: "tagesschrift";
+  font-weight: 400;
+  font-style: bold;
+  color: #365c19;
+  margin: 0;
+  font-size: 2.5rem;
+}
 
+.header-jefe-visible {
+  display: flex;
+  background-color: #b3b792;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 105px;
+  box-shadow: 0 6px 12px #979f34;
+  padding: 0 20px;
+}
 
+.header-invisible {
+  width: 100%;
+  height: 105px;
+}
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logo-container img {
+  width: 60px;
+  height: auto;
+  font-size: 2.5rem;
+}
 
+/* Menú -----------------------------------------------------------------------------------------------------*/
+/* MENU EN COMPUTADORAS ----------------------------------------------------------------*/
+.header-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
+.header-menu-item {
+  height: 100%;
+  margin: auto 0;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: #1c3d19;
+  font-family: "tagesschrift";
+  font-size: 1.2rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.header-menu > li:last-child {
+  position: relative;
+}
+
+.header-menu a:hover {
+  color: #677e52;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.header-menu-item img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Menu hamburguesa en celulares ----------------------------------------------------------*/
+.submenu-container {
+  position: relative;
+  background: #3a3a3a;
+  border-radius: 25px;
+  padding: 0;
+  width: 280px;
+  overflow: visible;
+}
+
+.menu-item {
+  position: relative;
+  padding: 20px 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 3;
+  text-align: right;
+}
+
+.menu-item:first-child {
+  padding-top: 25px;
+}
+
+.menu-item:last-child {
+  padding-bottom: 25px;
+}
+
+.hover-background {
+  position: absolute;
+  background: #d0d0d0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(0);
+  width: calc(100% + 15px);
+  height: 60px;
+  left: -15px;
+  border-radius: 0 30px 30px 0;
+}
+
+.hover-background.active {
+  opacity: 1;
+}
+
+/* Recorte superior continuo */
+.hover-background::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -15px;
+  width: calc(100% - 30px);
+  height: 15px;
+  background: #3a3a3a;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Recorte inferior continuo */
+.hover-background::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: calc(100% - 30px);
+  height: 15px;
+  background: #3a3a3a;
+  border-radius: 15px 15px 0 0;
+}
+
+.menu-item.active {
+  color: #3a3a3a;
+}
+
+.submenu-container:hover .menu-item {
+  color: white;
+}
+
+.submenu-container:hover .menu-item.active {
+  color: #3a3a3a;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #677e52;
+  border-width: 3px;
+  border-color: #8c9657;
+  border-radius: 3px;
+  margin: 4px 0;
+  font-family: "tagesschrift";
+  color: #e5d7c4;
+  transition: 0.3s;
+}
+
+.bar:hover:first-child {
+  background-color: #677e52;
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+/*
+.bar:hover:nth-child {
+  opacity: 0;
+}
+*/
+.bar:hover:first-child {
+  background-color: #677e52;
+  border-radius: 3px;
+  transform: rotate(-45deg);
+}
+
+/* MenuDeslizable Conectado------------------------------------------------------------------------------------------------------------------------- */
+/* contenedor padre menu desplegable*/
+.header-submenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  z-index: 100;
+  display: none;
+  /*display: block; <- clave */
+}
+
+.header-menu > li:last-child:hover .header-submenu {
+  display: block;
+}
+
+/* Diseño hijo 1 color oscuro*/
+.submenu-usuario-online {
+  display: flex;
+  height: 126px;
+  width: 100%;
+  border-radius: 1172px 0px 0px 0px;
+  background-color: #473f34;
+  padding-left: 50px;
+}
+
+.submenu-usuario-online img {
+  width: 65px;
+  height: 65px;
+  margin: 2rem 0 0 2rem;
+}
+
+.submenu-usuario-online h3 {
+  padding: 0;
+  font-family: "tagesschrift";
+  font-weight: normal;
+  color: #f0e7c6;
+  margin: 2rem 0 0 2rem;
+}
+
+.submenu-usuario-online .stars {
+  margin-top: 70px;
+  margin-left: -4rem;
+  color: #f0e7c6;
+}
+
+/* Diseño hijo 2 color claro*/
+.submenu-enlaces {
+  /* contenedor*/
+  display: flex;
+  padding-left: 50px;
+  background-color: #b3b792;
+  width: 100%;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submenu-enlaces ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu-enlaces li {
+  display: flex;
+  padding: 12px 0px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.submenu-enlaces img {
+  width: 35px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.submenu-enlaces a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  width: 100%;
+}
+
+.submenu-enlaces li:hover {
+  background-color: #f0f0f0;
+}
+
+/* MenuDeslizable Desconectado------------------------------------------------------------------------------------------------------------------------- */
+/* animacion decoraciones */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+    /*  rotate, el valor de rotación, translate como se mueve en Y */
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.floating-leaf {
+  position: absolute;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* regula tamaño decoraciones */
+.floating-leaf img {
+  width: 80px;
+  height: auto;
+}
+
+.leaf-1 {
+  top: 18%;
+  left: 10%;
+  animation-delay: 0s;
+  z-index: 1;
+}
+
+.leaf-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+  z-index: 1;
+}
+
+.leaf-3 {
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 2s;
+  z-index: 1;
+}
 
 /* AQUI EMPIEZA EL INDEX------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------- */
 /* Sección de bienvenida ---------------------------------------------------------------------------------------*/
@@ -26,12 +362,12 @@
 }
 
 .container-bienvenida {
-  @include flex;
+  display: flex;
   flex-direction: row;
   align-content: center;
   width: 880px;
   height: 500px;
-  background-color: $Marron-intermedio;
+  background-color: #cfbb99;
   margin: 80px auto;
 }
 
@@ -43,7 +379,7 @@
 }
 
 .banner-title {
-  background-color: $Black;
+  background-color: #473f34;
   border-radius: 8px;
   width: 600px;
   height: 100px;
@@ -53,8 +389,8 @@
 }
 
 .banner-title h2 {
-  font-family: $fuente2;
-  color: $Marron-clarito;
+  font-family: "tagesschrift";
+  color: #e5d7c4;
   text-align: left;
   padding-left: 20px;
 }
@@ -62,14 +398,14 @@
 .p-container {
   border-radius: 26px;
   margin: 36px 0px 6px 38px;
-  background-color: $Marron-clarito;
+  background-color: #e5d7c4;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px 20px 6px 0px;
 }
 
 .text-content p {
-  font-family: $fuente2;
-  color: $Black;
+  font-family: "tagesschrift";
+  color: #473f34;
   margin: 40px 40px 40px 40px;
   height: auto;
   width: auto;
@@ -79,7 +415,7 @@
 
 .goblinlandingpage1 {
   width: 45%;
-  @include flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -94,14 +430,14 @@
 /* Boton de log in pop up ------------------------------------------------------------------------------------------------------------------------------ */
 /* Estilo para la etiqueta que funciona como botón */
 .boton-comienza-ahora {
-  background-color: $verde-lima;
+  background-color: #b7ca79;
   border-width: 1px;
   border-color: #365746;
   border-style: solid;
   padding: 1rem 2rem;
   font-size: medium;
-  font-family: $fuente2;
-  color: $Marron-oscuro;
+  font-family: "tagesschrift";
+  color: #1c3d19;
   cursor: pointer;
   border-radius: 4px;
   width: auto;
@@ -112,8 +448,8 @@
 }
 
 .boton-comienza-ahora:hover {
-  background-color: $verde-oscuro;
-  color: $color-fondo;
+  background-color: #677e52;
+  color: #f6e8b1;
   transform: scale(1.05);
 }
 
@@ -128,7 +464,7 @@
 
 /* Mostrar el elemento cuando se clikeo el falso boton---------------------- */
 #aparecer-login:checked ~ .log-in-oculto {
-  @include flex;
+  display: flex;
   justify-content: center;
   animation: fadeIn 0.5s;
 }
@@ -156,13 +492,13 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: $Marron-oscuro;
-  color: $verde-logo;
+  background-color: #1c3d19;
+  color: #365c19;
   border: none;
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  @include flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -186,16 +522,16 @@
 
 /* El modal con el formulario */
 .modal {
-  background-color: $beige;
+  background-color: #f0e7c6;
   border-radius: 10px;
   padding: 20px;
   width: 320px;
   text-align: center;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border: 4px solid $verde-oscuro;
-  background-color: $verde-acento;
-  @include flex;
+  border: 4px solid #677e52;
+  background-color: #b3b792;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -213,15 +549,15 @@
   width: 90%;
   padding: 10px;
   margin: 10px 0;
-  border: 2px solid $Black;
+  border: 2px solid #473f34;
   border-radius: 5px;
-  font-family: $fuente2;
-  background-color: $beige;
+  font-family: "tagesschrift";
+  background-color: #f0e7c6;
 }
 
 form {
   width: 100%;
-  @include flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -254,14 +590,14 @@ form {
 
 /* Botón de login */
 .login-button {
-  background-color: $verde-oscuro;
-  color: $beige;
+  background-color: #677e52;
+  color: #f0e7c6;
   border: none;
   padding: 12px;
   width: 95%;
   border-radius: 5px;
   cursor: pointer;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   font-weight: bold;
   margin-top: 15px;
   transition: all 0.3s ease;
@@ -278,7 +614,7 @@ form {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: $verde-oscuro;
+  color: #677e52;
 }
 
 /* Campo de contraseña con icono de ojo */
@@ -304,10 +640,10 @@ form {
 .BannerSponsors {
   width: 100%;
   height: 180px;
-  background-color: $verde-oscuro;
-  font-family: $fuente2;
+  background-color: #677e52;
+  font-family: "tagesschrift";
   font-size: medium;
-  color: $Marron-clarito;
+  color: #e5d7c4;
   margin: auto;
   text-align: center;
 }
@@ -315,7 +651,7 @@ form {
 .supporters-logos {
   flex-direction: row;
   width: 100%;
-  @include flex;
+  display: flex;
   justify-content: space-around;
   align-items: center;
 }
@@ -333,21 +669,21 @@ form {
 }
 
 .comofunciona h2 {
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   text-align: center;
-  color: $verde-oscuro;
+  color: #677e52;
   margin-top: 160px;
 }
 
 .comofunciona-container {
-  @include flex;
+  display: flex;
   align-items: center;
   padding: 2rem;
   justify-content: space-between;
   border-radius: 8px;
   margin: 10px;
   max-width: 100%;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -358,7 +694,7 @@ form {
 }
 
 .comofunciona-container div {
-  background-color: $verde-acento;
+  background-color: #b3b792;
   width: 300px;
   height: 200px;
   margin: 30px;
@@ -368,27 +704,27 @@ form {
 }
 
 .comofunciona-container div:hover {
-  background-color: $verde-oscuro;
-  color: $color-fondo;
+  background-color: #677e52;
+  color: #f6e8b1;
   transform: scale(1.05) rotate(8deg);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* ¿Porqué unirte a nuestra comunidad?------------------------------------------------------------------------------------------------------------------------------*/
 .comunidad {
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   text-align: center;
-  background-color: $verde-oscuro;
+  background-color: #677e52;
   align-content: center;
-  color: $Black;
+  color: #473f34;
 }
 
 .comunidad-CONTAINER {
-  @include flex;
+  display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-around;
-  background-color: $Marron-clarito;
+  background-color: #e5d7c4;
   border-radius: 20px;
   width: 1200px;
   margin: 50px auto;
@@ -397,13 +733,13 @@ form {
 
 /* Testimonios------------------------------------------------------------------------------------------------------------------------------*/
 .testimonios {
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   text-align: center;
   margin: 100px 0 180px 0;
 }
 
 .testimonios-container {
-  @include flex;
+  display: flex;
   align-items: center;
   padding: 2rem;
   border-radius: 8px;
@@ -413,20 +749,20 @@ form {
 
 .testimonios-container p {
   padding: 0px 36px 2px 36px;
-  color: $Black;
+  color: #473f34;
 }
 
 .testimonios-container h3 {
-  color: $Black;
+  color: #473f34;
 }
 
 .testimonios-title h2 {
-  color: $Black;
+  color: #473f34;
 }
 
 /* Users cards ------------------*/
 .userfondo {
-  background-color: $Marron-clarito;
+  background-color: #e5d7c4;
   border-width: 3px;
   border-top: 4px solid #677e52;
   border-radius: 0px 0px 30px 30px;
@@ -462,21 +798,21 @@ form {
 .pie-de-pagina {
   flex-shrink: 0;
   margin-top: auto;
-  background-color: $Black;
+  background-color: #473f34;
   width: 100%;
-  font-family: $fuente1;
-  color: $falso-blanco;
+  font-family: "VT323", monospace;
+  color: #e5e0d8;
   font-weight: none;
 }
 
 .descripcionPagina a h3 {
-  color: $falso-blanco;
+  color: #e5e0d8;
   margin: 0px 0px 0px 0px;
 }
 
 .descripcionPagina div {
   width: auto;
-  color: $falso-blanco;
+  color: #e5e0d8;
   max-width: 100px;
   margin-right: 20px;
   margin-top: 0px;
@@ -484,7 +820,7 @@ form {
 
 .descripcionPagina p {
   width: auto;
-  color: $falso-blanco;
+  color: #e5e0d8;
   text-align: left;
   max-width: 180px;
   padding: 10px;
@@ -492,10 +828,10 @@ form {
 }
 
 .footerMenu {
-  @include flex;
-  font-family: $fuente1;
+  display: flex;
+  font-family: "VT323", monospace;
   justify-content: space-around;
-  background-color: $Black;
+  background-color: #473f34;
   margin: auto;
 }
 
@@ -508,12 +844,12 @@ form {
   margin: 0;
   padding: 0;
   text-align: left;
-  color: $falso-blanco;
+  color: #e5e0d8;
 }
 
 .footerMenu a {
-  font-family: $fuente1;
-  color: $falso-blanco;
+  font-family: "VT323", monospace;
+  color: #e5e0d8;
   text-decoration: none;
   padding: 10px 15px;
 }
@@ -528,8 +864,8 @@ form {
 }
 
 #copyright {
-  color: $falso-blanco;
-  font-family: $fuente1;
+  color: #e5e0d8;
+  font-family: "VT323", monospace;
   text-align: center;
   margin: auto;
   padding-top: 60px;
@@ -546,7 +882,7 @@ main {
 @media (max-width: 600px) {
   /* Para cambiar de menu al hamburguesa en celular*/
   .menu_hamburguesa_principal {
-    @include flex;
+    display: flex;
   }
   /* Solo mostrar en móviles (hasta 768px) */
   /* Mensaje para desktop */
@@ -561,7 +897,7 @@ main {
   .submenu-container {
     display: block;
     position: relative;
-    background: $Black;
+    background: #473f34;
     border-radius: 15px;
     padding: 0;
     width: 200px;
@@ -574,7 +910,7 @@ main {
   .menu-item {
     position: relative;
     padding: 20px 30px;
-    color: $Marron-clarito;
+    color: #e5d7c4;
     font-size: 15px;
     font-weight: 400;
     cursor: pointer;
@@ -590,7 +926,7 @@ main {
   }
   .hover-background {
     position: absolute;
-    background: $falso-blanco;
+    background: #e5e0d8;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
     opacity: 0;
@@ -611,7 +947,7 @@ main {
     top: -15px;
     width: calc(100% - 30px);
     height: 15px;
-    background: $Black;
+    background: #473f34;
     border-radius: 0 0 15px 15px;
   }
   /* Recorte inferior continuo */
@@ -622,17 +958,17 @@ main {
     bottom: -15px;
     width: calc(100% - 30px);
     height: 15px;
-    background: $Black;
+    background: #473f34;
     border-radius: 15px 15px 0 0;
   }
   .menu-item.active {
-    color: $verde-triada;
+    color: #8c9657;
   }
   .submenu-container:hover .menu-item {
-    color: $Black;
+    color: #473f34;
   }
   .submenu-container:hover .menu-item.active {
-    color: $verde-triada;
+    color: #8c9657;
   }
 }
 @media (max-width: 600px) {
@@ -655,7 +991,7 @@ main {
   .header-menu {
     display: none;
     align-content: center;
-    background-color: $verde-acento;
+    background-color: #b3b792;
   }
   .nav > li {
     width: 100%;
@@ -664,8 +1000,8 @@ main {
     margin: 15px 0;
   }
   .header-menu .show {
-    @include flex;
-    background-color: $verde-acento;
+    display: flex;
+    background-color: #b3b792;
   }
   .banner-title {
     border-radius: 0px 0px 60px 60px;
@@ -757,7 +1093,7 @@ main {
     height: 80px;
   }
   .comofunciona-container {
-    @include flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
@@ -787,7 +1123,7 @@ main {
     border-radius: 30px;
   }
   .testimonios-container {
-    @include flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: auto;
@@ -811,24 +1147,24 @@ main {
 @media (min-width: 600px) and (max-width: 1000px) {
   /* Para cambiar de menu al hamburguesa en tablets*/
   .menu_hamburguesa_principal {
-    @include flex;
+    display: flex;
   }
   .bar {
     width: 25px;
     height: 3px;
-    background-color: $verde-oscuro;
+    background-color: #677e52;
     border-width: 3px;
-    border-color: $verde-triada;
+    border-color: #8c9657;
     border-radius: 3px;
     margin: 4px 0;
-    font-family: $fuente2;
-    color: $Marron-clarito;
+    font-family: "tagesschrift";
+    color: #e5d7c4;
     transition: 0.3s;
-    @include flex;
+    display: flex;
     flex-direction: column;
   }
   .bar:hover:first-child {
-    background-color: $verde-oscuro;
+    background-color: #677e52;
     border-radius: 3px;
     transform: rotate(45deg);
   }
@@ -836,17 +1172,17 @@ main {
     opacity: 0;
   }
   .bar:hover:first-child {
-    background-color: $verde-oscuro;
+    background-color: #677e52;
     border-radius: 3px;
     transform: rotate(-45deg);
   }
   .menu_hamburguesa_item {
-    font-family: $fuente2;
-    color: $falso-blanco;
+    font-family: "tagesschrift";
+    color: #e5e0d8;
   }
   .menu-hamburguesa-fondo .active {
     display: none;
-    background-color: $verde-acento;
+    background-color: #b3b792;
     width: 50px;
     height: 100px;
     right: -100%; /* Empieza fuera de la pantalla por la derecha */
@@ -865,7 +1201,7 @@ main {
   .header-menu {
     display: none;
     align-content: center;
-    background-color: $verde-acento;
+    background-color: #b3b792;
   }
   .nav > li {
     width: 100%;
@@ -874,8 +1210,8 @@ main {
     margin: 15px 0;
   }
   .header-menu .show {
-    @include flex;
-    background-color: $verde-acento;
+    display: flex;
+    background-color: #b3b792;
   }
   .BannerSponsors {
     height: 140px;
@@ -938,12 +1274,12 @@ main {
     height: 105px;
   }
   .container-bienvenida {
-    @include flex;
+    display: flex;
     flex-direction: row;
     align-content: center;
     width: 880px;
     height: 500px;
-    background-color: $Marron-intermedio;
+    background-color: #cfbb99;
     margin: 80px auto;
   }
   .pie-de-pagina {
@@ -979,8 +1315,8 @@ main {
 }
 
 .registra-tu-planta h3 {
-  font-family: $fuente2;
-  color: $Black;
+  font-family: "tagesschrift";
+  color: #473f34;
   font-size: 30px;
   margin-left: 340px;
   margin-top: 50px;
@@ -988,7 +1324,7 @@ main {
 
 /* contenedor general*/
 .registra-abuelo {
-  @include flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 1400px;
@@ -999,53 +1335,53 @@ main {
 
 /* contenedor parte izquierda, hijo 1------------------------*/
 .formulario-plantas {
-  @include flex;
+  display: flex;
   flex-direction: column;
   margin-top: 40px;
 }
 
 .formulario-plantas > form > div:hover {
-  background-color: $Marron-clarito;
-  color: $Black;
+  background-color: #e5d7c4;
+  color: #473f34;
   transform: scale(1.05);
 }
 
 .formulario-plantas > form > div {
-  @include flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: $Black;
-  font-family: $fuente2;
+  background-color: #473f34;
+  font-family: "tagesschrift";
   font-weight: lighter;
-  color: $Marron-clarito;
+  color: #e5d7c4;
   border-radius: 41px;
   width: 600px;
   margin: 6px 20px 20px 100px;
 }
 
 .formulario-plantas > form > div > input {
-  background-color: $Marron-clarito;
-  font-family: $fuente2;
+  background-color: #e5d7c4;
+  font-family: "tagesschrift";
   font-weight: lighter;
   border-radius: 41px;
-  color: $Black;
+  color: #473f34;
   width: 500px;
 }
 
 .formulario-plantas > form > div > input:hover {
-  background-color: $Black;
+  background-color: #473f34;
   font-weight: lighter;
-  color: $Marron-clarito;
+  color: #e5d7c4;
   transform: scale(1.05);
 }
 
 .boton-registro1 {
-  background-color: $Black;
+  background-color: #473f34;
   border-width: 1px;
   border-style: none;
   padding: 1rem 2rem;
   font-size: medium;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   color: beige;
   cursor: pointer;
   font-weight: normal;
@@ -1060,7 +1396,7 @@ main {
 .boton-registro1:hover,
 .boton-registro2:hover {
   background-color: beige;
-  color: $Black;
+  color: #473f34;
   transform: scale(1.05);
 }
 
@@ -1113,7 +1449,7 @@ main {
 }
 
 .form-label {
-  background: $Marron-oscuro;
+  background: #1c3d19;
   padding: 12px 20px;
   border-radius: 25px 25px 0 0;
   margin: 0;
@@ -1154,14 +1490,14 @@ main {
 
 .image-upload-container:hover {
   border-color: var(--verde-principal);
-  background: $verde-acento;
+  background: #b3b792;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(127, 176, 105, 0.3);
 }
 
 .image-upload-container.dragover {
   border-color: var(--verde-principal);
-  background: $verde-acento;
+  background: #b3b792;
   box-shadow: 0 0 20px rgba(127, 176, 105, 0.4);
 }
 
@@ -1187,7 +1523,7 @@ main {
 }
 
 .upload-text {
-  color: $Marron-oscuro;
+  color: #1c3d19;
 }
 
 .upload-text h5 {
@@ -1238,7 +1574,7 @@ main {
   border-radius: 50%;
   width: 35px;
   height: 35px;
-  @include flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -1257,11 +1593,11 @@ main {
 }
 
 .boton-registro2 {
-  background-color: $Black;
+  background-color: #473f34;
   border-style: none;
   padding: 1rem 2rem;
   font-size: medium;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   color: beige;
   font-weight: normal;
   cursor: pointer;
@@ -1291,7 +1627,7 @@ main {
 }
 
 body {
-  background-color: $Marron-clarito !important;
+  background-color: #e5d7c4 !important;
 }
 
 /* Mobile (≤ 600px) */
@@ -1384,29 +1720,29 @@ body {
 /* aquí empieza intercambios-----------------------------------------------------------------------------------------------------*/
 /* ENCABEZADO WEB INTERCAMBIOS----------------------------------------- */
 .intercambio-encabezado {
-  background-color: $verde-oscuro;
+  background-color: #677e52;
   width: 100%;
   height: 290px;
-  @include flex;
+  display: flex;
   flex-direction: row;
 }
 
 .intercambio-encabezado h2 {
-  color: $Marron-clarito;
-  font-family: $fuente2;
+  color: #e5d7c4;
+  font-family: "tagesschrift";
   margin: 100px 0 30px 360px;
   font-weight: normal;
   font-size: 32px;
 }
 
 .intercambio-encabezado p {
-  color: $Marron-clarito;
-  font-family: $fuente2;
+  color: #e5d7c4;
+  font-family: "tagesschrift";
   margin: 0px 0 42px 360px;
 }
 
 .contador-ecologico {
-  background-color: $Black;
+  background-color: #473f34;
   width: 380px;
   height: 66px;
   border-radius: 32px;
@@ -1414,7 +1750,7 @@ body {
 }
 
 .contador-ecologico p {
-  font-family: $fuente1;
+  font-family: "VT323", monospace;
   color: beige;
   font-size: 30px;
   font-weight: normal;
@@ -1426,7 +1762,7 @@ body {
 
 .search-wrapper {
   position: relative;
-  @include flex;
+  display: flex;
   align-items: center;
   margin: -70px 0px 0 1180px;
   gap: 15px;
@@ -1438,15 +1774,15 @@ body {
   border: none !important;
   border-radius: 25px !important;
   padding: 15px 25px !important;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
   font-size: 16px !important;
-  color: $falso-blanco !important;
+  color: #e5e0d8 !important;
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   transition: all 0.3s ease;
 }
 
 .plantbuddy-search-input::placeholder {
-  color: $falso-blanco !important;
+  color: #e5e0d8 !important;
 }
 
 .plantbuddy-search-input:focus {
@@ -1461,10 +1797,10 @@ body {
   border-radius: 50% !important;
   width: 60px !important;
   height: 50px !important;
-  @include flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: $falso-blanco !important;
+  color: #e5e0d8 !important;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(143, 170, 114, 0.3);
 }
@@ -1497,7 +1833,7 @@ body {
 
 /* Estilo común para todos los elementos del grid */
 .ofertas-grid > div {
-  background-color: $verde-acento;
+  background-color: #b3b792;
   height: 300px;
   width: 200px;
   border-radius: 44px;
@@ -1506,22 +1842,22 @@ body {
 
 /* Estilo primera oferta /elemento de la grid -----------------------------------*/
 .varOferta1 {
-  @include flex;
+  display: flex;
   flex-direction: column;
   height: 300px;
   width: 200px;
-  background-color: $verde-oscuro;
-  font-family: $fuente1;
+  background-color: #677e52;
+  font-family: "VT323", monospace;
 }
 
 /* Estilo /elementos parte de arriba -------------------*/
 .parte-superior {
-  @include flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background: $verde-oscuro;
+  background: #677e52;
   border-radius: 44px 44px 0 0;
   height: 100px;
 }
@@ -1531,7 +1867,7 @@ body {
 }
 
 .encabezado1 {
-  @include flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
@@ -1571,11 +1907,11 @@ body {
 
 /* componentes partes de abajo ----------------------------*/
 .parte-inferior-blanca {
-  background-color: $Marron-clarito;
+  background-color: #e5d7c4;
   border-width: 1.8px;
   border-style: solid;
-  border-color: $Black;
-  @include flex;
+  border-color: #473f34;
+  display: flex;
   flex-direction: column;
   height: fit-content;
   width: 200px;
@@ -1586,7 +1922,7 @@ body {
 }
 
 .parte-a {
-  @include flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -1611,7 +1947,7 @@ body {
 
 .potato-comentarios {
   margin: 120px 0 0 -40px;
-  @include flex;
+  display: flex;
   flex-direction: row;
   width: 20px;
   gap: 0;
@@ -1625,8 +1961,8 @@ body {
 }
 
 .parte-b {
-  font-family: $fuente1;
-  color: $Black;
+  font-family: "VT323", monospace;
+  color: #473f34;
   height: fit-content;
   margin-top: 60px;
   font-size: small;
@@ -1634,30 +1970,30 @@ body {
 }
 
 .parte-c {
-  @include flex;
+  display: flex;
   flex-direction: column;
   width: fit-content;
   height: fit-content;
 }
 
 .clasificacion {
-  @include flex;
+  display: flex;
   flex-direction: row;
   font-size: 8px;
 }
 
 .likes {
-  @include flex;
+  display: flex;
   flex-direction: row;
   font-size: 8px;
 }
 
 /* estilos botones proponer, likes y calificaciones */
 .parte-c button {
-  background-color: $Black;
+  background-color: #473f34;
   border-style: none;
-  font-family: $fuente1;
-  color: $falso-blanco;
+  font-family: "VT323", monospace;
+  color: #e5e0d8;
   cursor: pointer;
   font-size: 13px;
   border-radius: 30px;
@@ -1668,10 +2004,10 @@ body {
 }
 
 .parte-d {
-  background-color: $Black;
+  background-color: #473f34;
   border-style: none;
   border-radius: 30px;
-  color: $falso-blanco;
+  color: #e5e0d8;
   font-size: 13px;
   margin: 10px;
 }
@@ -1691,29 +2027,29 @@ body {
 
 /* Personalización de la paginación Bootstrap */
 .pagination .page-link {
-  color: $verde-acento;
-  border-color: $verde-acento;
+  color: #b3b792;
+  border-color: #b3b792;
 }
 
 .pagination .page-item.active .page-link {
-  background-color: $verde-acento !important;
-  border-color: $verde-acento;
+  background-color: #b3b792 !important;
+  border-color: #b3b792;
 }
 
 .pagination .page-link:hover {
   background-color: var(--verde-claro);
-  border-color: $verde-acento;
+  border-color: #b3b792;
 }
 
 /* para sobreescribir bootstrap */
 body,
 html {
-  background: $Marron-clarito !important;
+  background: #e5d7c4 !important;
 }
 
 header,
 footer {
-  color: $verde-oscuro !important;
+  color: #677e52 !important;
 }
 
 /* MEDIAQUERIE RESPONSIVE_____________/
@@ -1806,9 +2142,9 @@ footer {
 .encabezado-comunidad {
   width: 100%;
   height: 300px;
-  background-color: $Black;
-  font-family: $fuente2;
-  color: $Marron-clarito;
+  background-color: #473f34;
+  font-family: "tagesschrift";
+  color: #e5d7c4;
   margin-top: 0;
   padding-top: 0;
 }
@@ -1828,12 +2164,12 @@ footer {
 }
 
 .ideas {
-  background-color: $verde-triada;
+  background-color: #8c9657;
   border-width: 1px;
   padding: 1rem 2rem;
   font-size: medium;
-  font-family: $fuente2;
-  color: $Black;
+  font-family: "tagesschrift";
+  color: #473f34;
   cursor: pointer;
   border-radius: 20px;
   width: auto;
@@ -1847,7 +2183,7 @@ footer {
 
 /* grid comunidad */
 .comunidad-grid-container {
-  @include flex;
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
@@ -1862,18 +2198,18 @@ footer {
 
 /* foros parte derecha, comunidad */
 .foros-container {
-  @include flex;
+  display: flex;
   flex-direction: column;
-  background-color: $Marron-intermedio;
+  background-color: #cfbb99;
   margin-top: 2rem;
   margin: 2rem 0 0 4rem;
   width: 60%;
   height: fit-content;
   border-radius: 12px;
   border-width: 3px;
-  border-color: $Black;
-  font-family: $fuente2;
-  color: $Black;
+  border-color: #473f34;
+  font-family: "tagesschrift";
+  color: #473f34;
 }
 
 .foros-container h2 {
@@ -1883,14 +2219,14 @@ footer {
 .divider-superior {
   width: 80%;
   height: 2px;
-  background-color: $Marron-clarito;
+  background-color: #e5d7c4;
   margin-left: 10%;
 }
 
 /* categorias populares comunidad */
 .categorias-populares-container {
-  color: $verde-acento;
-  font-family: $fuente2;
+  color: #b3b792;
+  font-family: "tagesschrift";
   width: 800px;
   height: fit-content;
   display: grid;
@@ -1909,10 +2245,10 @@ footer {
 }
 
 .categoria {
-  background: linear-gradient(135deg, $verde-acento 0%, $verde-oscuro 100%);
+  background: linear-gradient(135deg, #b3b792 0%, #677e52 100%);
   width: 325px;
   height: 157px;
-  @include flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
@@ -1990,10 +2326,10 @@ footer {
 
 /* publicaciones foro comunidad ----------------------------------------------------------------------*/
 .actividad-reciente-container {
-  @include flex;
+  display: flex;
   flex-direction: column;
-  font-family: $fuente2;
-  color: $Black;
+  font-family: "tagesschrift";
+  color: #473f34;
   margin: 2rem 0;
 }
 
@@ -2002,11 +2338,11 @@ footer {
 }
 
 .divisiones-publicaciones {
-  @include flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: $verde-triada;
+  background-color: #8c9657;
   height: 4rem;
   border-radius: 8px;
   width: 89%;
@@ -2029,7 +2365,7 @@ footer {
 .card {
   border-radius: 12px;
   padding: 16px 20px;
-  @include flex;
+  display: flex;
   align-items: flex-start;
   transition: all 0.3s ease;
   position: relative;
@@ -2051,7 +2387,7 @@ footer {
 
 .card:hover .divider {
   opacity: 6;
-  background-color: $Black;
+  background-color: #473f34;
 }
 
 /* Gradiente específico para cada card - de más claro a más oscuro */
@@ -2068,7 +2404,7 @@ footer {
 }
 
 .card:nth-child(4) {
-  background-color: $verde-triada;
+  background-color: #8c9657;
 }
 
 .card:nth-child(5) {
@@ -2099,7 +2435,7 @@ footer {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, $verde-triada, $verde-acento);
+  background: linear-gradient(45deg, #8c9657, #b3b792);
   border-radius: 50%;
   z-index: -1;
 }
@@ -2136,7 +2472,7 @@ footer {
 }
 
 .meta {
-  @include flex;
+  display: flex;
   align-items: center;
   flex-shrink: 0;
   flex-direction: row;
@@ -2145,7 +2481,7 @@ footer {
 }
 
 .meta-top {
-  @include flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
 }
@@ -2165,7 +2501,7 @@ footer {
 }
 
 .rating {
-  @include flex;
+  display: flex;
   gap: 3px;
   justify-content: center;
 }
@@ -2203,7 +2539,7 @@ footer {
 /* sidebars comunidad ------------------------------------------------------*/
 /* foros parte izquierda, comunidad */
 .comunidad-sidenavbars-container {
-  @include flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -2214,7 +2550,7 @@ footer {
 
 /* primer bloque, buscadores*/
 .buscadores-container {
-  background-color: $Black;
+  background-color: #473f34;
   border-radius: 10px;
   padding: 20px;
   width: 280px;
@@ -2231,8 +2567,8 @@ footer {
   padding: 12px 45px 12px 15px;
   border: none;
   border-radius: 5px;
-  background-color: $Marron-clarito;
-  font-family: $fuente2;
+  background-color: #e5d7c4;
+  font-family: "tagesschrift";
   font-size: 14px;
   outline: none;
 }
@@ -2267,26 +2603,26 @@ footer {
 .conduct-btn {
   width: 100%;
   padding: 12px;
-  background-color: $verde-oscuro;
-  color: $Marron-clarito;
+  background-color: #677e52;
+  color: #e5d7c4;
   border: none;
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s;
   margin-top: 5px;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
 }
 
 .conduct-btn:hover {
-  background-color: $verde-triada;
+  background-color: #8c9657;
 }
 
 /* segundo bloque, navcomunidad, verticalnav */
 .navbar-container {
   position: relative;
   top: 20px;
-  background-color: $Black;
+  background-color: #473f34;
   border-radius: 10px;
   padding: 15px;
   width: 280px;
@@ -2298,9 +2634,9 @@ footer {
   display: block;
   width: 100%;
   padding: 12px 15px;
-  background-color: $verde-triada;
-  font-family: $fuente2;
-  color: $beige;
+  background-color: #8c9657;
+  font-family: "tagesschrift";
+  color: #f0e7c6;
   border: none;
   border-radius: 5px;
   font-size: 14px;
@@ -2312,7 +2648,7 @@ footer {
 }
 
 .nav-item:hover {
-  background-color: $Black;
+  background-color: #473f34;
   transform: translateX(3px);
 }
 
@@ -2321,7 +2657,7 @@ footer {
 }
 
 .nav-item.active {
-  background-color: $verde-oscuro;
+  background-color: #677e52;
 }
 
 .content {
@@ -2330,7 +2666,7 @@ footer {
   line-height: 1.6;
   width: 20px;
   flex: 1;
-  @include flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -2380,7 +2716,7 @@ footer {
     gap: 20px;
   }
   .categorias-populares-container {
-    @include flex;
+    display: flex;
     flex-direction: column;
   }
   .foros-container {
@@ -2433,7 +2769,7 @@ footer {
     margin-left: 250px;
   }
   .comunidad-grid-container {
-    @include flex;
+    display: flex;
     flex-direction: column;
   }
   .pie-de-pagina {
@@ -2496,7 +2832,7 @@ footer {
   margin: auto;
   margin-top: 120px;
   width: 1000px;
-  @include flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -2506,9 +2842,9 @@ footer {
   width: 1000px;
   height: 100px;
   border-radius: 12px 12px 0px 0px;
-  background-color: $Black;
-  font-family: $fuente2;
-  color: $Marron-clarito;
+  background-color: #473f34;
+  font-family: "tagesschrift";
+  color: #e5d7c4;
   justify-self: left;
   align-self: center;
 }
@@ -2521,16 +2857,16 @@ footer {
 .formulario {
   width: 1000px;
   height: 493px;
-  background-color: $Marron-intermedio;
+  background-color: #cfbb99;
   border-width: 2px;
-  border-color: $Black;
+  border-color: #473f34;
   border-radius: 0px 0px 1px 20px;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
 }
 
 /* parte1................*/
 .formulario-parte1 {
-  @include flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
@@ -2546,8 +2882,8 @@ footer {
   margin-top: 2rem;
   background-color: transparent;
   border: none;
-  font-family: $fuente2;
-  background-color: $Marron-clarito;
+  font-family: "tagesschrift";
+  background-color: #e5d7c4;
   padding-left: 2rem;
   font-size: 1rem;
 }
@@ -2571,9 +2907,9 @@ footer {
   width: 100%;
   height: 250px;
   border-radius: 20px;
-  background-color: $Marron-clarito;
+  background-color: #e5d7c4;
   border: none;
-  font-family: $fuente2;
+  font-family: "tagesschrift";
 }
 
 .formulario-parte2 input:focus {
@@ -2683,14 +3019,14 @@ footer {
 
 */
 .perfil-container {
-  @include flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 800px;
-  font-family: $fuente2;
-  color: $Black;
+  font-family: "tagesschrift";
+  color: #473f34;
 }
 
 .perfil-container h2 {
@@ -2703,7 +3039,7 @@ footer {
 }
 
 .perfil-botones {
-  @include flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -2724,7 +3060,7 @@ footer {
   bottom: -15px; /* Más separada */
   width: 0;
   height: 3px; /* Más gruesa */
-  background: $Black;
+  background: #473f34;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
 }
@@ -2738,8 +3074,8 @@ footer {
   border-style: none;
   padding: 1rem 2rem;
   font-size: medium;
-  font-family: $fuente2;
-  color: $Black;
+  font-family: "tagesschrift";
+  color: #473f34;
   cursor: pointer;
   font-weight: bold;
   width: auto;
@@ -2748,7 +3084,7 @@ footer {
 }
 
 .boton-registro1:hover {
-  color: $Black;
+  color: #473f34;
   transform: scale(1.05);
 }
 
@@ -2756,5 +3092,7 @@ footer {
   width: 20%;
   height: auto;
 }
+
+
 
 /*# sourceMappingURL=main.css.map */
