@@ -1,4 +1,8 @@
 @charset "UTF-8";
+--- --- .vacio {
+  display: flex;
+}
+
 /* Queria usar esta pero no em dio tiempo
 @mixin flex($justify: center, $align: center) {
   display: flex;
