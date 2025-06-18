@@ -4,8 +4,7 @@
   "description": "_Funcion en JS Menu hamburguesa, cada vez que clickeo la clase \"hamburguesa\", me abre el menú, que está oculto o desoculto dependientemente del viewport seleccionado en mediaquerie,\r se activa o desactiva con el \"display: none\", \"display: flex\"._",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass sass/main.scss css/main.css --watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
