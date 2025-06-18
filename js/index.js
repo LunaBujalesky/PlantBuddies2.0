@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 */
 
+
+/*
 // menu hamburguesa cuando ingresa por celular
 const hamburguesa = document.getElementById("hamburguesa");
 //const menuEnlaces = document.getElementById("nav-links");
@@ -83,31 +85,13 @@ const myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', () => {
   myInput.focus()
 })
+*/
 
 
 
 
 
-
-
-
-
-
-
-
-const titulo = document.getElementById("titulo");
-
-titulo.addEventListener('click', () =>{
-  titulo.classList.toggle('pepito');
-
-console.log(titulo.classList);
-});
-
-
-
-
-
-  /*
+  
   const submenu = document.getElementById('submenu');
   const hoverBg = document.getElementById('hoverBg');
   const menuItems = document.querySelectorAll('.menu-item');
@@ -176,4 +160,3 @@ console.log(titulo.classList);
       menuFondo.classList.remove('active');
     }
   });
-*/
